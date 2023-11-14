@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="254"
-  DTS:VersionGUID="{4362E957-EC36-451C-B1D4-13E08349FBBC}">
+  DTS:VersionBuild="260"
+  DTS:VersionGUID="{BB702833-28EF-4E51-8BD2-7C2F52A71B22}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -176,7 +176,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGSgRLe0G8EeJKFmtTmMNHwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADrtNRZsNAgLRYE2r4oV74fr9cLlGFNloPAkcyGR7NY4wAAAAAOgAAAAAIAACAAAAB7hjAnvUCwFv8BDfCquKVAKNty2fBnhwaqwfAfyhd6MiAAAACnp16w02NDhcaR33uVxaC6a/3052Yabfl/1OxiKGcrlEAAAADvwcdvwhpgpSAjpX7Kw1IAyKIpbhj7RRHnjR09/PipaxJd9zubxDZun6FC5DxZHrbyHCYGFg+OLdx75ZfhIO6j</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGSgRLe0G8EeJKFmtTmMNHwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABZ5YHJxhUjKalzTqPkff9klTzVp2CyOeycvCAhsYodjgAAAAAOgAAAAAIAACAAAAAcCJZ93VdLcUZ9pPSu2h49EfT9gkhDMu4WQDT5MCiJ5SAAAADaRa2JEJCim5nAPWv2DPuMxJP5RR8MATiGan+PXnu8MUAAAADbXMQN8Re6305AbYK3iVWIUCXNHVTiAr4O3BSYhO9ne0/QiODS1VsndLdTLpDtXckcFr86nAwnM9JZzFOoc/Le</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -9390,12 +9390,6 @@
                           cachedName="BIRTH_DATE"
                           externalMetadataColumnId="Package\Load Dim to Warehouse\Customer\Dim_Customer.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
-                        <inputColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Dim_Customer.Inputs[OLE DB Destination Input].Columns[AGE]"
-                          cachedDataType="i4"
-                          cachedName="AGE"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Customer\Dim_Customer.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
-                          lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[AGE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -9443,10 +9437,6 @@
                           refId="Package\Load Dim to Warehouse\Customer\Dim_Customer.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           dataType="dbDate"
                           name="BIRTH_DATE" />
-                        <externalMetadataColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Dim_Customer.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
-                          dataType="i4"
-                          name="AGE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -9625,15 +9615,6 @@
                           lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
                           name="BIRTH_DATE"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[AGE]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
-                          lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[AGE]"
-                          name="AGE"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -9681,10 +9662,6 @@
                           refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
                           dataType="dbDate"
                           name="BIRTH_DATE" />
-                        <externalMetadataColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
-                          dataType="i4"
-                          name="AGE" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -9745,11 +9722,6 @@
                           dataType="dbDate"
                           lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
                           name="BIRTH_DATE" />
-                        <outputColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Error Output].Columns[AGE]"
-                          dataType="i4"
-                          lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Error Output].Columns[AGE]"
-                          name="AGE" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -10334,12 +10306,6 @@
                           externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
                         <inputColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].Columns[AGE]"
-                          cachedDataType="i4"
-                          cachedName="AGE"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
-                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[AGE]" />
-                        <inputColumn
                           refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].Columns[EDUCATION_LEVEL]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -10390,10 +10356,6 @@
                           refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           dataType="dbDate"
                           name="BIRTH_DATE" />
-                        <externalMetadataColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
-                          dataType="i4"
-                          name="AGE" />
                         <externalMetadataColumn
                           refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION_LEVEL]"
                           dataType="wstr"
@@ -10563,15 +10525,6 @@
                           name="BIRTH_DATE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[AGE]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
-                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[AGE]"
-                          name="AGE"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[EDUCATION_LEVEL]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -10628,10 +10581,6 @@
                           refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
                           dataType="dbDate"
                           name="BIRTH_DATE" />
-                        <externalMetadataColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
-                          dataType="i4"
-                          name="AGE" />
                         <externalMetadataColumn
                           refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[EDUCATION_LEVEL]"
                           dataType="wstr"
@@ -10690,11 +10639,6 @@
                           dataType="dbDate"
                           lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
                           name="BIRTH_DATE" />
-                        <outputColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[AGE]"
-                          dataType="i4"
-                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[AGE]"
-                          name="AGE" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[EDUCATION_LEVEL]"
                           dataType="wstr"
@@ -11143,25 +11087,20 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Transformación Data\Customer R and W\First and last name &amp; age"
+                  refId="Package\Transformación Data\Customer R and W\First and last name"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="First and last name &amp; age"
+                  name="First and last name"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Inputs[Derived Column Input]"
+                      refId="Package\Transformación Data\Customer R and W\First and last name.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Inputs[Derived Column Input].Columns[BIRTH_DATE_FIX]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="BIRTH_DATE_FIX"
-                          lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE_FIX]" />
-                        <inputColumn
-                          refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Inputs[Derived Column Input].Columns[FULL_NAME]"
+                          refId="Package\Transformación Data\Customer R and W\First and last name.Inputs[Derived Column Input].Columns[FULL_NAME]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="FULL_NAME"
@@ -11172,42 +11111,20 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output]"
+                      refId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Transformación Data\Customer R and W\First and last name.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[AGE]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[AGE]"
-                          name="AGE"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_I4)[DATEDIFF]("yyyy",(DT_DATE)#{Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE_FIX]},[GETDATE]())</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_I4)DATEDIFF("yyyy",(DT_DATE)BIRTH_DATE,GETDATE())</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[FIRST_NAME]"
+                          refId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[FIRST_NAME]"
+                          lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]"
                           name="FIRST_NAME"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -11225,13 +11142,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[LAST_NAME]"
+                          refId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[LAST_NAME]"
+                          lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]"
                           name="LAST_NAME"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -11252,23 +11169,23 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Error Output]"
+                      refId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Transformación Data\Customer R and W\First and last name.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -11389,25 +11306,19 @@
                           externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
                           lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]" />
                         <inputColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[AGE]"
-                          cachedDataType="i4"
-                          cachedName="AGE"
-                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[AGE]" />
-                        <inputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[LAST_NAME]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="LAST_NAME"
                           externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[LAST_NAME]" />
+                          lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]" />
                         <inputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[FIRST_NAME]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="FIRST_NAME"
                           externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output].Columns[FIRST_NAME]" />
+                          lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -11455,10 +11366,6 @@
                           dataType="str"
                           length="255"
                           name="LAST_NAME" />
-                        <externalMetadataColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
-                          dataType="i4"
-                          name="AGE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -12325,7 +12232,7 @@
                   refId="Package\Transformación Data\Customer R and W.Paths[Derived Column Output]"
                   endId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
-                  startId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Outputs[Derived Column Output]" />
+                  startId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Transformación Data\Customer R and W.Paths[Derived Column Output1]"
                   endId="Package\Transformación Data\Customer R and W\Union All.Inputs[Union All Input 1]"
@@ -12348,7 +12255,7 @@
                   startId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Transformación Data\Customer R and W.Paths[Union All Output 1]"
-                  endId="Package\Transformación Data\Customer R and W\First and last name &amp; age.Inputs[Derived Column Input]"
+                  endId="Package\Transformación Data\Customer R and W\First and last name.Inputs[Derived Column Input]"
                   name="Union All Output 1"
                   startId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1]" />
               </paths>
@@ -13161,32 +13068,26 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Transformación Data\Employee\First and last name &amp; age"
+                  refId="Package\Transformación Data\Employee\First and last name"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="First and last name &amp; age"
+                  name="First and last name"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Transformación Data\Employee\First and last name &amp; age.Inputs[Derived Column Input]"
+                      refId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Inputs[Derived Column Input].Columns[FULL_NAME]"
+                          refId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input].Columns[FULL_NAME]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="FULL_NAME"
                           lineageId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[FULL_NAME]" />
                         <inputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Inputs[Derived Column Input].Columns[BIRTH_DATE]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="BIRTH_DATE"
-                          lineageId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
-                        <inputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Inputs[Derived Column Input].Columns[GENDER]"
+                          refId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input].Columns[GENDER]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="GENDER"
@@ -13197,20 +13098,20 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output]"
+                      refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Transformación Data\Employee\First and last name &amp; age.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[GENDER_FIX]"
+                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[GENDER_FIX]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[GENDER_FIX]"
+                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[GENDER_FIX]"
                           name="GENDER_FIX"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -13228,35 +13129,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[AGE]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[AGE]"
-                          name="AGE"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_I4)[DATEDIFF]("yyyy",(DT_DATE)#{Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]},[GETDATE]())</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_I4)DATEDIFF("yyyy",(DT_DATE)BIRTH_DATE,GETDATE())</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[FIRST_NAME]"
+                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[FIRST_NAME]"
+                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]"
                           name="FIRST_NAME"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -13274,13 +13153,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[LAST_NAME]"
+                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[LAST_NAME]"
+                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]"
                           name="LAST_NAME"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -13301,23 +13180,23 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Error Output]"
+                      refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Transformación Data\Employee\First and last name &amp; age.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -13658,32 +13537,29 @@
                           externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION_LEVEL]"
                           lineageId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[EDUCATION_LEVEL]" />
                         <inputColumn
-                          refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[AGE]"
-                          cachedDataType="i4"
-                          cachedName="AGE"
-                          externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[AGE]" />
-                        <inputColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[FIRST_NAME]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="255"
                           cachedName="FIRST_NAME"
                           externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[FIRST_NAME]" />
+                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]" />
                         <inputColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[LAST_NAME]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="255"
                           cachedName="LAST_NAME"
                           externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[LAST_NAME]" />
+                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]" />
                         <inputColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[GENDER_FIX]"
-                          cachedDataType="wstr"
-                          cachedLength="9"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="GENDER_FIX"
                           externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
-                          lineageId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output].Columns[GENDER_FIX]" />
+                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[GENDER_FIX]" />
                         <inputColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_ID]"
                           cachedDataType="r8"
@@ -13717,10 +13593,6 @@
                           dataType="str"
                           length="50"
                           name="GENDER" />
-                        <externalMetadataColumn
-                          refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
-                          dataType="i4"
-                          name="AGE" />
                         <externalMetadataColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
                           codePage="1252"
@@ -13775,10 +13647,10 @@
                   refId="Package\Transformación Data\Employee.Paths[Derived Column Output]"
                   endId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
-                  startId="Package\Transformación Data\Employee\First and last name &amp; age.Outputs[Derived Column Output]" />
+                  startId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Transformación Data\Employee.Paths[OLE DB Source Output]"
-                  endId="Package\Transformación Data\Employee\First and last name &amp; age.Inputs[Derived Column Input]"
+                  endId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
                   startId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output]" />
               </paths>
@@ -14532,22 +14404,22 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="311,461"
-          Size="311,504"
+          PanelSize="311,430"
+          Size="311,473"
           Id="Package\Cleaning Data"
-          TopLeft="478,344" />
+          TopLeft="483,237" />
         <NodeLayout
           Size="150,42"
           Id="Package\Delet data dim"
-          TopLeft="1336,244" />
+          TopLeft="1341,137" />
         <NodeLayout
           Size="165,42"
           Id="Package\Delet data middle"
-          TopLeft="523,245" />
+          TopLeft="528,138" />
         <NodeLayout
           Size="168,42"
           Id="Package\Delet data staging"
-          TopLeft="129,251" />
+          TopLeft="134,144" />
         <NodeLayout
           Size="232,42"
           Id="Package\Extraction data to Staging\Load Billing history SQL Server"
@@ -14670,7 +14542,7 @@
           PanelSize="300,444"
           Size="300,487"
           Id="Package\Extraction data to Staging"
-          TopLeft="66,340" />
+          TopLeft="71,233" />
         <NodeLayout
           Size="127,42"
           Id="Package\Load Dim to Warehouse\Customer"
@@ -14765,7 +14637,7 @@
           PanelSize="297,399"
           Size="297,442"
           Id="Package\Load Dim to Warehouse"
-          TopLeft="1281,347" />
+          TopLeft="1286,240" />
         <NodeLayout
           Size="172,42"
           Id="Package\Transformación Data\Customer R and W"
@@ -14860,10 +14732,10 @@
           PanelSize="205,369"
           Size="205,412"
           Id="Package\Transformación Data"
-          TopLeft="927,342" />
+          TopLeft="932,235" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="264.666666666667,340">
+          TopLeft="269.666666666667,233">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14893,13 +14765,13 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="132.028880208333,-21.3581201665675,50.60890625,11.609375"
+              BoundingBox="132.028880208334,-21.3581201665675,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1432.08333333333,286">
+          TopLeft="1437.08333333333,179">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14923,13 +14795,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="789,596">
+          TopLeft="794,473.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138,-48"
+              EndConnector="138,-32.5"
               Start="0,0"
-              End="130.5,-48">
+              End="130.5,-32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -14940,13 +14812,13 @@
                     Point2="69,0"
                     Point3="69,-4" />
                   <mssgle:LineSegment
-                    End="69,-44" />
+                    End="69,-28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="69,-44"
-                    Point2="69,-48"
-                    Point3="73,-48" />
+                    Point1="69,-28.5"
+                    Point2="69,-32.5"
+                    Point3="73,-32.5" />
                   <mssgle:LineSegment
-                    End="130.5,-48" />
+                    End="130.5,-32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14959,7 +14831,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="213,293">
+          TopLeft="218,186">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14995,7 +14867,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="1029.5,342">
+          TopLeft="1034.5,235">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15031,7 +14903,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="632.583333333333,287">
+          TopLeft="637.583333333333,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16553,7 +16425,7 @@
     design-time-name="Package\Load Dim to Warehouse\Customer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151,42"
           Id="Package\Load Dim to Warehouse\Customer\Mid_Customer"
@@ -16581,9 +16453,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16685,7 +16555,7 @@
     design-time-name="Package\Load Dim to Warehouse\Employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="173,42"
           Id="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix"
@@ -16713,9 +16583,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16817,9 +16685,9 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="204,42"
-          Id="Package\Transformación Data\Customer R and W\First and last name &amp; age"
-          TopLeft="423,437" />
+          Size="172,42"
+          Id="Package\Transformación Data\Customer R and W\First and last name"
+          TopLeft="436,446" />
         <NodeLayout
           Size="159,42"
           Id="Package\Transformación Data\Customer R and W\Type &quot;Minorista&quot;"
@@ -16843,21 +16711,21 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Transformación Data\Customer R and W\Mid_Customer"
-          TopLeft="455,559" />
+          TopLeft="447,559" />
         <EdgeLayout
           Id="Package\Transformación Data\Customer R and W.Paths[Union All Output 1]"
-          TopLeft="523.75,374">
+          TopLeft="522.25,374">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63"
+              EndConnector="0,72"
               Start="0,0"
-              End="0,55.5">
+              End="0,64.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.5" />
+                    End="0,64.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16980,18 +16848,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transformación Data\Customer R and W.Paths[Derived Column Output]"
-          TopLeft="527.75,479">
+          TopLeft="522.25,488">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,80"
+              EndConnector="0,71"
               Start="0,0"
-              End="0,72.5">
+              End="0,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.5" />
+                    End="0,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17056,9 +16924,35 @@
           Id="Package\Transformación Data\Date\Mid_Date"
           TopLeft="446,120" />
         <NodeLayout
+          Size="99,42"
+          Id="Package\Transformación Data\Date\Sort"
+          TopLeft="449,386" />
+        <NodeLayout
           Size="465,42"
           Id="Package\Transformación Data\Date\Columns DATE_ID, SEMESTER, BIMESTER, DATE, YEAR, MONTH and DAY"
           TopLeft="283,264" />
+        <EdgeLayout
+          Id="Package\Transformación Data\Date.Paths[Sort Output]"
+          TopLeft="501.5,428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Transformación Data\Date.Paths[OLE DB Source Output]"
           TopLeft="512.25,162">
@@ -17081,58 +16975,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="99,42"
-          Id="Package\Transformación Data\Date\Sort"
-          TopLeft="455,349" />
         <EdgeLayout
           Id="Package\Transformación Data\Date.Paths[Derived Column Output]"
           TopLeft="515.5,306">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11,43"
+              EndConnector="-17,80"
               Start="0,0"
-              End="-11,35.5">
+              End="-17,72.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5" />
+                    End="0,36" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="-4,21.5" />
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="-4,40" />
                   <mssgle:LineSegment
-                    End="-7,21.5" />
+                    End="-13,40" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7,21.5"
-                    Point2="-11,21.5"
-                    Point3="-11,25.5" />
+                    Point1="-13,40"
+                    Point2="-17,40"
+                    Point3="-17,44" />
                   <mssgle:LineSegment
-                    End="-11,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transformación Data\Date.Paths[Sort Output]"
-          TopLeft="504.5,391">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,115"
-              Start="0,0"
-              End="0,107.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,107.5" />
+                    End="-17,72.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17178,18 +17046,18 @@
         <NodeLayout
           Size="173,42"
           Id="Package\Transformación Data\Employee\Mid_Employee_Fix"
-          TopLeft="462,351" />
+          TopLeft="448,352" />
         <NodeLayout
           Size="152,42"
           Id="Package\Transformación Data\Employee\Mid_Employee"
           TopLeft="458,109" />
         <NodeLayout
-          Size="204,42"
-          Id="Package\Transformación Data\Employee\First and last name &amp; age"
-          TopLeft="437.692307692308,220.923076923077" />
+          Size="172,42"
+          Id="Package\Transformación Data\Employee\First and last name"
+          TopLeft="440.692307692308,220.923076923077" />
         <EdgeLayout
           Id="Package\Transformación Data\Employee.Paths[OLE DB Source Output]"
-          TopLeft="536.846153846154,151">
+          TopLeft="530.346153846154,151">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17211,30 +17079,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transformación Data\Employee.Paths[Derived Column Output]"
-          TopLeft="539.692307692308,262.923076923077">
+          TopLeft="530.596153846154,262.923076923077">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.80769230769192,88.076923076923"
+              EndConnector="0,89.076923076923"
               Start="0,0"
-              End="8.80769230769192,80.576923076923">
+              End="0,81.576923076923">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.0384615384615" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,40.0384615384615"
-                    Point2="0,44.0384615384615"
-                    Point3="4,44.0384615384615" />
-                  <mssgle:LineSegment
-                    End="4.80769230769192,44.0384615384615" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.80769230769192,44.0384615384615"
-                    Point2="8.80769230769192,44.0384615384615"
-                    Point3="8.80769230769192,48.0384615384615" />
-                  <mssgle:LineSegment
-                    End="8.80769230769192,80.576923076923" />
+                    End="0,81.576923076923" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
