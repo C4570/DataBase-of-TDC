@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="260"
-  DTS:VersionGUID="{BB702833-28EF-4E51-8BD2-7C2F52A71B22}">
+  DTS:VersionBuild="273"
+  DTS:VersionGUID="{17DAF58C-6D8C-4DBD-A629-04396AFFC586}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -176,7 +176,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGSgRLe0G8EeJKFmtTmMNHwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABZ5YHJxhUjKalzTqPkff9klTzVp2CyOeycvCAhsYodjgAAAAAOgAAAAAIAACAAAAAcCJZ93VdLcUZ9pPSu2h49EfT9gkhDMu4WQDT5MCiJ5SAAAADaRa2JEJCim5nAPWv2DPuMxJP5RR8MATiGan+PXnu8MUAAAADbXMQN8Re6305AbYK3iVWIUCXNHVTiAr4O3BSYhO9ne0/QiODS1VsndLdTLpDtXckcFr86nAwnM9JZzFOoc/Le</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGSgRLe0G8EeJKFmtTmMNHwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACllm3mmpfUmSWEOkamZnxVfha5RX2VTjH7TjHCgerHQAAAAAAOgAAAAAIAACAAAADZHqtQHhtBvG3xtd1OZIgWHetqSlVJ2OgdVB7dpAwllyAAAABch3wzv7bKiJKJyqgeL6K8KDMfcKRsHcTy0eIqKnjuJUAAAAAZ0Qe71RfQ9Qe2IpeESP7/VKnlKm07QY/KOC6Bef50uidj3hiZrMNZ3VNCVFpYi6fzsquyhIRnHSy2QB1WPCSc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -3923,6 +3923,97 @@
               version="1">
               <components>
                 <component
+                  refId="Package\Cleaning Data\Employee\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Cleaning Data\Employee\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Cleaning Data\Employee\Conditional Split.Inputs[Conditional Split Input].Columns[EMPLOYEE_ID]"
+                          cachedDataType="r8"
+                          cachedName="EMPLOYEE_ID "
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EMPLOYEE_ID ]"
+                          name="EMPLOYEE_ID" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Cleaning Data\Employee\Conditional Split.Outputs[NotNull]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="NotNull"
+                      synchronousInputId="Package\Cleaning Data\Employee\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">![ISNULL](#{Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EMPLOYEE_ID ]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(EMPLOYEE_ID)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Cleaning Data\Employee\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Cleaning Data\Employee\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Cleaning Data\Employee\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Cleaning Data\Employee\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Cleaning Data\Employee\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Cleaning Data\Employee\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Cleaning Data\Employee\Mid_Employee"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -3995,53 +4086,60 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_ID]"
+                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_ID ]"
                           cachedDataType="r8"
-                          cachedName="EMPLOYEE_ID"
+                          cachedName="EMPLOYEE_ID "
+                          cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
-                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]" />
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EMPLOYEE_ID ]" />
                         <inputColumn
-                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[FULL_NAME]"
+                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[FULL_NAME ]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="FULL_NAME"
+                          cachedName="FULL_NAME "
+                          cachedSortKeyPosition="2"
                           externalMetadataColumnId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].ExternalColumns[FULL_NAME]"
-                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[FULL_NAME]" />
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[FULL_NAME ]" />
                         <inputColumn
-                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[CATEGORY]"
+                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[CATEGORY ]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="CATEGORY"
+                          cachedName="CATEGORY "
+                          cachedSortKeyPosition="3"
                           externalMetadataColumnId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORY]"
-                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[CATEGORY]" />
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[CATEGORY ]" />
                         <inputColumn
-                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[EMPLOYMENT_DATE]"
+                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[EMPLOYMENT_DATE ]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="EMPLOYMENT_DATE"
+                          cachedName="EMPLOYMENT_DATE "
+                          cachedSortKeyPosition="4"
                           externalMetadataColumnId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYMENT_DATE]"
-                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EMPLOYMENT_DATE]" />
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EMPLOYMENT_DATE ]" />
                         <inputColumn
-                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE]"
+                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE ]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="BIRTH_DATE"
+                          cachedName="BIRTH_DATE "
+                          cachedSortKeyPosition="5"
                           externalMetadataColumnId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
-                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[BIRTH_DATE ]" />
                         <inputColumn
-                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[EDUCATION_LEVEL]"
+                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[EDUCATION_LEVEL ]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="EDUCATION_LEVEL"
+                          cachedName="EDUCATION_LEVEL "
+                          cachedSortKeyPosition="6"
                           externalMetadataColumnId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION_LEVEL]"
-                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EDUCATION_LEVEL]" />
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EDUCATION_LEVEL ]" />
                         <inputColumn
-                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[GENDER]"
+                          refId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].Columns[GENDER ]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="GENDER"
+                          cachedName="GENDER "
+                          cachedSortKeyPosition="7"
                           externalMetadataColumnId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
-                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[GENDER]" />
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[GENDER ]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4102,6 +4200,266 @@
                           lineageId="Package\Cleaning Data\Employee\Mid_Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Cleaning Data\Employee\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input].Columns[EMPLOYEE_ID]"
+                          cachedDataType="r8"
+                          cachedName="EMPLOYEE_ID"
+                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input].Columns[FULL_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="FULL_NAME"
+                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[FULL_NAME]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input].Columns[CATEGORY]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CATEGORY"
+                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[CATEGORY]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input].Columns[EMPLOYMENT_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EMPLOYMENT_DATE"
+                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EMPLOYMENT_DATE]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">4</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input].Columns[BIRTH_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="BIRTH_DATE"
+                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">5</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input].Columns[EDUCATION_LEVEL]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EDUCATION_LEVEL"
+                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EDUCATION_LEVEL]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">6</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input].Columns[GENDER]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="GENDER"
+                          lineageId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[GENDER]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">7</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EMPLOYEE_ID ]"
+                          dataType="r8"
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EMPLOYEE_ID ]"
+                          name="EMPLOYEE_ID "
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[FULL_NAME ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[FULL_NAME ]"
+                          name="FULL_NAME "
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[FULL_NAME]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[CATEGORY ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[CATEGORY ]"
+                          name="CATEGORY "
+                          sortKeyPosition="3">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[CATEGORY]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EMPLOYMENT_DATE ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EMPLOYMENT_DATE ]"
+                          name="EMPLOYMENT_DATE "
+                          sortKeyPosition="4">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EMPLOYMENT_DATE]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[BIRTH_DATE ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[BIRTH_DATE ]"
+                          name="BIRTH_DATE "
+                          sortKeyPosition="5">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EDUCATION_LEVEL ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[EDUCATION_LEVEL ]"
+                          name="EDUCATION_LEVEL "
+                          sortKeyPosition="6">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[EDUCATION_LEVEL]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[GENDER ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output].Columns[GENDER ]"
+                          name="GENDER "
+                          sortKeyPosition="7">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output].Columns[GENDER]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -4342,10 +4700,20 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Cleaning Data\Employee.Paths[OLE DB Source Output]"
+                  refId="Package\Cleaning Data\Employee.Paths[NotNull]"
                   endId="Package\Cleaning Data\Employee\Mid_Employee.Inputs[OLE DB Destination Input]"
+                  name="NotNull"
+                  startId="Package\Cleaning Data\Employee\Conditional Split.Outputs[NotNull]" />
+                <path
+                  refId="Package\Cleaning Data\Employee.Paths[OLE DB Source Output]"
+                  endId="Package\Cleaning Data\Employee\Sort.Inputs[Sort Input]"
                   name="OLE DB Source Output"
                   startId="Package\Cleaning Data\Employee\STG_EMPLOYEE.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Cleaning Data\Employee.Paths[Sort Output]"
+                  endId="Package\Cleaning Data\Employee\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Sort Output"
+                  startId="Package\Cleaning Data\Employee\Sort.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -10320,6 +10688,18 @@
                           cachedName="GENDER"
                           externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
                           lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[GENDER]" />
+                        <inputColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].Columns[ANTIQUITY]"
+                          cachedDataType="i4"
+                          cachedName="ANTIQUITY"
+                          externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[ANTIQUITY]"
+                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[ANTIQUITY]" />
+                        <inputColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].Columns[AGE]"
+                          cachedDataType="i4"
+                          cachedName="AGE"
+                          externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
+                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[AGE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -10367,6 +10747,14 @@
                           dataType="str"
                           length="50"
                           name="GENDER" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[ANTIQUITY]"
+                          dataType="i4"
+                          name="ANTIQUITY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
+                          dataType="i4"
+                          name="AGE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -10545,6 +10933,24 @@
                           lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[GENDER]"
                           name="GENDER"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[ANTIQUITY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[ANTIQUITY]"
+                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[ANTIQUITY]"
+                          name="ANTIQUITY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[AGE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
+                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[AGE]"
+                          name="AGE"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -10592,6 +10998,14 @@
                           dataType="str"
                           length="50"
                           name="GENDER" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[ANTIQUITY]"
+                          dataType="i4"
+                          name="ANTIQUITY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
+                          dataType="i4"
+                          name="AGE" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -10652,6 +11066,16 @@
                           length="50"
                           lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[GENDER]"
                           name="GENDER" />
+                        <outputColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[ANTIQUITY]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[ANTIQUITY]"
+                          name="ANTIQUITY" />
+                        <outputColumn
+                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[AGE]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[AGE]"
+                          name="AGE" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -13068,50 +13492,62 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Transformación Data\Employee\First and last name"
+                  refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="First and last name"
+                  name="First and last name; Age; Fix gender; Antiquity"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input]"
+                      refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input].Columns[FULL_NAME]"
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Inputs[Derived Column Input].Columns[FULL_NAME]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="FULL_NAME"
                           lineageId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[FULL_NAME]" />
                         <inputColumn
-                          refId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input].Columns[GENDER]"
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Inputs[Derived Column Input].Columns[GENDER]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="GENDER"
                           lineageId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[GENDER]" />
+                        <inputColumn
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Inputs[Derived Column Input].Columns[BIRTH_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="BIRTH_DATE"
+                          lineageId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
+                        <inputColumn
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Inputs[Derived Column Input].Columns[EMPLOYMENT_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EMPLOYMENT_DATE"
+                          lineageId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[EMPLOYMENT_DATE]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output]"
+                      refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[GENDER_FIX]"
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[GENDER_FIX]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[GENDER_FIX]"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[GENDER_FIX]"
                           name="GENDER_FIX"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -13129,13 +13565,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]"
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[FIRST_NAME]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[FIRST_NAME]"
                           name="FIRST_NAME"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -13153,13 +13589,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]"
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[LAST_NAME]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[LAST_NAME]"
                           name="LAST_NAME"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -13176,27 +13612,71 @@
                               name="FriendlyExpression">SUBSTRING(FULL_NAME,FINDSTRING(FULL_NAME," ",1) + 1,LEN(FULL_NAME))</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[ANTIQUITY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[ANTIQUITY]"
+                          name="ANTIQUITY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[DATEDIFF]("yy",(DT_DATE)#{Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[EMPLOYMENT_DATE]},[GETDATE]())</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">DATEDIFF("yy",(DT_DATE)EMPLOYMENT_DATE,GETDATE())</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[AGE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[AGE]"
+                          name="AGE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[DATEDIFF]("yy",(DT_DATE)#{Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]},[GETDATE]())</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">DATEDIFF("yy",(DT_DATE)BIRTH_DATE,GETDATE())</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output]"
+                      refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -13543,7 +14023,7 @@
                           cachedLength="255"
                           cachedName="FIRST_NAME"
                           externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
-                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]" />
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[FIRST_NAME]" />
                         <inputColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[LAST_NAME]"
                           cachedCodepage="1252"
@@ -13551,7 +14031,7 @@
                           cachedLength="255"
                           cachedName="LAST_NAME"
                           externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
-                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]" />
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[LAST_NAME]" />
                         <inputColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[GENDER_FIX]"
                           cachedCodepage="1252"
@@ -13559,13 +14039,25 @@
                           cachedLength="50"
                           cachedName="GENDER_FIX"
                           externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
-                          lineageId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output].Columns[GENDER_FIX]" />
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[GENDER_FIX]" />
                         <inputColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_ID]"
                           cachedDataType="r8"
                           cachedName="EMPLOYEE_ID"
                           externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
                           lineageId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]" />
+                        <inputColumn
+                          refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[ANTIQUITY]"
+                          cachedDataType="i4"
+                          cachedName="ANTIQUITY"
+                          externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[ANTIQUITY]"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[ANTIQUITY]" />
+                        <inputColumn
+                          refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].Columns[AGE]"
+                          cachedDataType="i4"
+                          cachedName="AGE"
+                          externalMetadataColumnId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
+                          lineageId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output].Columns[AGE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -13613,6 +14105,14 @@
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
                           dataType="i4"
                           name="EMPLOYEE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[ANTIQUITY]"
+                          dataType="i4"
+                          name="ANTIQUITY" />
+                        <externalMetadataColumn
+                          refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
+                          dataType="i4"
+                          name="AGE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -13647,10 +14147,10 @@
                   refId="Package\Transformación Data\Employee.Paths[Derived Column Output]"
                   endId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
-                  startId="Package\Transformación Data\Employee\First and last name.Outputs[Derived Column Output]" />
+                  startId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Transformación Data\Employee.Paths[OLE DB Source Output]"
-                  endId="Package\Transformación Data\Employee\First and last name.Inputs[Derived Column Input]"
+                  endId="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
                   startId="Package\Transformación Data\Employee\Mid_Employee.Outputs[OLE DB Source Output]" />
               </paths>
@@ -14996,7 +15496,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15018,7 +15520,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15040,7 +15544,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15062,7 +15568,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15084,7 +15592,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15551,7 +16061,7 @@
     design-time-name="Package\Cleaning Data\Employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168,42"
           Id="Package\Cleaning Data\Employee\STG_EMPLOYEE"
@@ -15559,27 +16069,93 @@
         <NodeLayout
           Size="152,42"
           Id="Package\Cleaning Data\Employee\Mid_Employee"
-          TopLeft="501,307" />
+          TopLeft="522,490" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Cleaning Data\Employee\Sort"
+          TopLeft="525,289" />
         <EdgeLayout
           Id="Package\Cleaning Data\Employee.Paths[OLE DB Source Output]"
-          TopLeft="577,187">
+          TopLeft="575.75,187">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,120"
+              EndConnector="0,102"
               Start="0,0"
-              End="0,112.5">
+              End="0,94.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,112.5" />
+                    End="0,94.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Cleaning Data\Employee\Conditional Split"
+          TopLeft="499,384" />
+        <EdgeLayout
+          Id="Package\Cleaning Data\Employee.Paths[Sort Output]"
+          TopLeft="576.5,331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cleaning Data\Employee.Paths[NotNull]"
+          TopLeft="578.5,426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.5,64"
+              Start="0,0"
+              End="19.5,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="15.5,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,32"
+                    Point2="19.5,32"
+                    Point3="19.5,36" />
+                  <mssgle:LineSegment
+                    End="19.5,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.67212890625,37,32.8442578125,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15615,7 +16191,7 @@
     design-time-name="Package\Cleaning Data\Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="141,42"
           Id="Package\Cleaning Data\Product\Mid_Product"
@@ -15647,9 +16223,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15671,9 +16245,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15709,7 +16281,7 @@
     design-time-name="Package\Extraction data to Staging\Load Billing history SQL Server">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Extraction data to Staging\Load Billing history SQL Server\STG_BILLING"
@@ -15737,7 +16309,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15768,23 +16342,31 @@
     design-time-name="Package\Extraction data to Staging\Load Billing MySQL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Extraction data to Staging\Load Billing MySQL\STG_BILLING"
+          TopLeft="376.5,209.5" />
         <NodeLayout
           Size="194,42"
           Id="Package\Extraction data to Staging\Load Billing MySQL\STG_BILLING_DETAIL"
           TopLeft="614,203" />
         <NodeLayout
-          Size="104,42"
-          Id="Package\Extraction data to Staging\Load Billing MySQL\Price"
-          TopLeft="969,37" />
-        <NodeLayout
           Size="141,42"
           Id="Package\Extraction data to Staging\Load Billing MySQL\STG_PRICE"
           TopLeft="955,209" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Extraction data to Staging\Load Billing MySQL\STG_BILLING"
-          TopLeft="376.5,209.5" />
+          Size="127,42"
+          Id="Package\Extraction data to Staging\Load Billing MySQL\Discounts"
+          TopLeft="1214.5,27" />
+        <NodeLayout
+          Size="104,42"
+          Id="Package\Extraction data to Staging\Load Billing MySQL\Price"
+          TopLeft="969,37" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Extraction data to Staging\Load Billing MySQL\STG_DISCOUNTS"
+          TopLeft="1206,214" />
         <NodeLayout
           Size="138,42"
           Id="Package\Extraction data to Staging\Load Billing MySQL\Billing detail"
@@ -15793,50 +16375,6 @@
           Size="109,42"
           Id="Package\Extraction data to Staging\Load Billing MySQL\Billing"
           TopLeft="391,39" />
-        <EdgeLayout
-          Id="Package\Extraction data to Staging\Load Billing MySQL.Paths[ODBC Source Output2]"
-          TopLeft="1023.25,79">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,130"
-              Start="0,0"
-              End="0,122.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,122.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extraction data to Staging\Load Billing MySQL.Paths[ODBC Source Output1]"
-          TopLeft="710,73">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,130"
-              Start="0,0"
-              End="0,122.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,122.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Extraction data to Staging\Load Billing MySQL.Paths[ODBC Source Output]"
           TopLeft="448.5,81">
@@ -15856,17 +16394,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Extraction data to Staging\Load Billing MySQL\Discounts"
-          TopLeft="1214.5,27" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Extraction data to Staging\Load Billing MySQL\STG_DISCOUNTS"
-          TopLeft="1206,214" />
         <EdgeLayout
           Id="Package\Extraction data to Staging\Load Billing MySQL.Paths[ODBC Source Output3]"
           TopLeft="1278,69">
@@ -15898,7 +16430,57 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extraction data to Staging\Load Billing MySQL.Paths[ODBC Source Output2]"
+          TopLeft="1023.25,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,130"
+              Start="0,0"
+              End="0,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extraction data to Staging\Load Billing MySQL.Paths[ODBC Source Output1]"
+          TopLeft="710,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,130"
+              Start="0,0"
+              End="0,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16425,7 +17007,7 @@
     design-time-name="Package\Load Dim to Warehouse\Customer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Load Dim to Warehouse\Customer\Mid_Customer"
@@ -16453,7 +17035,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16563,21 +17147,21 @@
         <NodeLayout
           Size="154,42"
           Id="Package\Load Dim to Warehouse\Employee\Dim_Employee"
-          TopLeft="416,238" />
+          TopLeft="422,274" />
         <EdgeLayout
           Id="Package\Load Dim to Warehouse\Employee.Paths[OLE DB Source Output]"
-          TopLeft="494.75,125">
+          TopLeft="497.75,125">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,113"
+              EndConnector="0,149"
               Start="0,0"
-              End="0,105.5">
+              End="0,141.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,105.5" />
+                    End="0,141.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16589,19 +17173,6 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Dim to Warehouse\Employee\Dim_Employee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix">
     <Properties>
@@ -16619,7 +17190,7 @@
     design-time-name="Package\Load Dim to Warehouse\Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="162,42"
           Id="Package\Load Dim to Warehouse\Product\Mid_Product_Fix"
@@ -16647,7 +17218,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16685,18 +17258,6 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="172,42"
-          Id="Package\Transformación Data\Customer R and W\First and last name"
-          TopLeft="436,446" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Transformación Data\Customer R and W\Type &quot;Minorista&quot;"
-          TopLeft="275,233" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Transformación Data\Customer R and W\Union All"
-          TopLeft="461,332" />
-        <NodeLayout
           Size="165,42"
           Id="Package\Transformación Data\Customer R and W\Mid_Customer_R"
           TopLeft="272,59" />
@@ -16712,6 +17273,18 @@
           Size="151,42"
           Id="Package\Transformación Data\Customer R and W\Mid_Customer"
           TopLeft="447,559" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Transformación Data\Customer R and W\Union All"
+          TopLeft="461,332" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Transformación Data\Customer R and W\Type &quot;Minorista&quot;"
+          TopLeft="275,233" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Transformación Data\Customer R and W\First and last name"
+          TopLeft="436,446" />
         <EdgeLayout
           Id="Package\Transformación Data\Customer R and W.Paths[Union All Output 1]"
           TopLeft="522.25,374">
@@ -17046,29 +17619,29 @@
         <NodeLayout
           Size="173,42"
           Id="Package\Transformación Data\Employee\Mid_Employee_Fix"
-          TopLeft="448,352" />
+          TopLeft="454,389" />
         <NodeLayout
           Size="152,42"
           Id="Package\Transformación Data\Employee\Mid_Employee"
           TopLeft="458,109" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Transformación Data\Employee\First and last name"
-          TopLeft="440.692307692308,220.923076923077" />
+          Size="304,42"
+          Id="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity"
+          TopLeft="387.692307692308,245.923076923077" />
         <EdgeLayout
-          Id="Package\Transformación Data\Employee.Paths[OLE DB Source Output]"
-          TopLeft="530.346153846154,151">
+          Id="Package\Transformación Data\Employee.Paths[Derived Column Output]"
+          TopLeft="540.096153846154,287.923076923077">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69.923076923077"
+              EndConnector="0,101.076923076923"
               Start="0,0"
-              End="0,62.423076923077">
+              End="0,93.576923076923">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.423076923077" />
+                    End="0,93.576923076923" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17078,19 +17651,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Transformación Data\Employee.Paths[Derived Column Output]"
-          TopLeft="530.596153846154,262.923076923077">
+          Id="Package\Transformación Data\Employee.Paths[OLE DB Source Output]"
+          TopLeft="536.846153846154,151">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,89.076923076923"
+              EndConnector="0,94.923076923077"
               Start="0,0"
-              End="0,81.576923076923">
+              End="0,87.423076923077">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.576923076923" />
+                    End="0,87.423076923077" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17132,7 +17705,7 @@
     design-time-name="Package\Transformación Data\Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="162,42"
           Id="Package\Transformación Data\Product\Mid_Product_Fix"
@@ -17168,7 +17741,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17190,7 +17765,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17212,7 +17789,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17233,6 +17812,19 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Transformación Data\Product\Mid_Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim to Warehouse\Employee\Dim_Employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
