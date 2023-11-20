@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="273"
-  DTS:VersionGUID="{17DAF58C-6D8C-4DBD-A629-04396AFFC586}">
+  DTS:VersionBuild="334"
+  DTS:VersionGUID="{A833C8E5-AF10-4C17-9830-CBD3C1CEEC85}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -176,7 +176,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGSgRLe0G8EeJKFmtTmMNHwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACllm3mmpfUmSWEOkamZnxVfha5RX2VTjH7TjHCgerHQAAAAAAOgAAAAAIAACAAAADZHqtQHhtBvG3xtd1OZIgWHetqSlVJ2OgdVB7dpAwllyAAAABch3wzv7bKiJKJyqgeL6K8KDMfcKRsHcTy0eIqKnjuJUAAAAAZ0Qe71RfQ9Qe2IpeESP7/VKnlKm07QY/KOC6Bef50uidj3hiZrMNZ3VNCVFpYi6fzsquyhIRnHSy2QB1WPCSc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGSgRLe0G8EeJKFmtTmMNHwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD/KWsQlo7FSSOHFnIMzfyfY+Fzee8gr9RP11NOl5OE/gAAAAAOgAAAAAIAACAAAADIwJr29PCSJRfSTrWtXUsq3aeM7BB3QsO1ieeuFsiI1iAAAAB5I+FsALBCXEgG+mQMb06TawtOfo3DW5+d7X8mhOK8DUAAAACvLaUQQIqExiPbBtcQ2TXLdYDexqj5P8e4xQzOVyzpW+RxXE2HdEmmhtlKEKxsQWmC9T1yAcY8S1XsuydtLseY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2388,7 +2388,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[Mid_Customer_R]</property>
+                      name="OpenRowset">[dbo].[Mid_Customer_R]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2481,7 +2481,7 @@
                           refId="Package\Cleaning Data\Customer R and W\Mid_Customer_R.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE_FIX]"
                           cachedDataType="date"
                           cachedName="BIRTH_DATE_FIX"
-                          externalMetadataColumnId="Package\Cleaning Data\Customer R and W\Mid_Customer_R.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE_FIX]"
+                          externalMetadataColumnId="Package\Cleaning Data\Customer R and W\Mid_Customer_R.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           lineageId="Package\Cleaning Data\Customer R and W\fix date.Outputs[Derived Column Output].Columns[BIRTH_DATE_FIX]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -2510,9 +2510,9 @@
                           length="255"
                           name="FULL_NAME" />
                         <externalMetadataColumn
-                          refId="Package\Cleaning Data\Customer R and W\Mid_Customer_R.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE_FIX]"
+                          refId="Package\Cleaning Data\Customer R and W\Mid_Customer_R.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           dataType="dbTimeStamp"
-                          name="BIRTH_DATE_FIX" />
+                          name="BIRTH_DATE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2557,7 +2557,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[Mid_Customer_W]</property>
+                      name="OpenRowset">[dbo].[Mid_Customer_W]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2650,7 +2650,7 @@
                           refId="Package\Cleaning Data\Customer R and W\Mid_Customer_W.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE_FIX]"
                           cachedDataType="date"
                           cachedName="BIRTH_DATE_FIX"
-                          externalMetadataColumnId="Package\Cleaning Data\Customer R and W\Mid_Customer_W.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE_FIX]"
+                          externalMetadataColumnId="Package\Cleaning Data\Customer R and W\Mid_Customer_W.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           lineageId="Package\Cleaning Data\Customer R and W\Fix date.Outputs[Derived Column Output].Columns[BIRTH_DATE_FIX]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -2679,9 +2679,9 @@
                           length="255"
                           name="FULL_NAME" />
                         <externalMetadataColumn
-                          refId="Package\Cleaning Data\Customer R and W\Mid_Customer_W.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE_FIX]"
+                          refId="Package\Cleaning Data\Customer R and W\Mid_Customer_W.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           dataType="dbTimeStamp"
-                          name="BIRTH_DATE_FIX" />
+                          name="BIRTH_DATE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -5175,20 +5175,20 @@
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Delet data dim"
+      DTS:refId="Package\Delet data datawarehouse"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{F12B6B91-2519-4264-AD31-57146E56427F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Delet data dim"
+      DTS:ObjectName="Delet data datawarehouse"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{96A8FFB3-6DD8-4345-9B6B-44907CE27D00}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE[dbo].[Dim_Customer]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Dim_Employee]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Dim_Date]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Dim_Product]&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM dbo.Dim_Customer&#xA;DELETE FROM dbo.Dim_Employee&#xA;DELETE FROM dbo.Dim_Date&#xA;DELETE FROM dbo.Dim_Product&#xA;DELETE FROM dbo.Dim_GrupoEtario&#xA;DELETE FROM dbo.Fact_Billing" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -5209,6 +5209,24 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Delet data middle end"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{4361f8e1-2f0e-4821-97d9-12f2c3cc79b8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delet data middle end"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{125EB46D-8A18-4492-9CBB-193279B1EBF4}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE[dbo].[Mid_Customer]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Customer_R]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Customer_W]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Employee]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Employee_Fix]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Product]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Product_Fix]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Billing]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Billing_detail]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Billing_history]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Date]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Date_Fix]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Price]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[Mid_Discounts]&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Delet data staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -5216,6 +5234,24 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Delet data staging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1A62F4AD-D0C6-47D1-AD4C-F2463179B6DD}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE[dbo].[STG_BILLING]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_BILLING_DETAIL]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_BILLING_HISTORY]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_CUSTOMER_R]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_CUSTOMER_W]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_EMPLOYEE]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_HOLIDAY]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_PRICE]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_PRODUCT]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_REGIONS]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_STOCK]&#xA;GO&#xA;TRUNCATE TABLE[dbo].[STG_DISCOUNTS]&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delet data staging end"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{d1365539-2e02-4d81-9146-94c71cd75333}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delet data staging end"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -9697,12 +9733,6 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Dim_Customer.Inputs[OLE DB Destination Input].Columns[CUSTOMER_KEY]"
-                          cachedDataType="i4"
-                          cachedName="CUSTOMER_KEY"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Customer\Dim_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_KEY]"
-                          lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]" />
-                        <inputColumn
                           refId="Package\Load Dim to Warehouse\Customer\Dim_Customer.Inputs[OLE DB Destination Input].Columns[CUSTOMER_ID]"
                           cachedDataType="i4"
                           cachedName="CUSTOMER_ID"
@@ -9895,15 +9925,6 @@
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_KEY]"
-                          lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]"
-                          name="CUSTOMER_KEY"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
@@ -9987,10 +10008,6 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_KEY]"
-                          dataType="i4"
-                          name="CUSTOMER_KEY" />
-                        <externalMetadataColumn
                           refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_ID]"
                           dataType="i4"
                           name="CUSTOMER_ID" />
@@ -10037,11 +10054,6 @@
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_KEY]"
-                          dataType="i4"
-                          lineageId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_KEY]"
-                          name="CUSTOMER_KEY" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Customer\Mid_Customer.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_ID]"
                           dataType="i4"
@@ -10627,12 +10639,6 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_KEY]"
-                          cachedDataType="i4"
-                          cachedName="EMPLOYEE_KEY"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_KEY]"
-                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]" />
-                        <inputColumn
                           refId="Package\Load Dim to Warehouse\Employee\Dim_Employee.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_ID]"
                           cachedDataType="i4"
                           cachedName="EMPLOYEE_ID"
@@ -10845,15 +10851,6 @@
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_KEY]"
-                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]"
-                          name="EMPLOYEE_KEY"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
@@ -10955,10 +10952,6 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_KEY]"
-                          dataType="i4"
-                          name="EMPLOYEE_KEY" />
-                        <externalMetadataColumn
                           refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_ID]"
                           dataType="i4"
                           name="EMPLOYEE_ID" />
@@ -11013,11 +11006,6 @@
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_KEY]"
-                          dataType="i4"
-                          lineageId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_KEY]"
-                          name="EMPLOYEE_KEY" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_ID]"
                           dataType="i4"
@@ -11102,6 +11090,23 @@
                   startId="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim to Warehouse\GrupoEtario"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{79D9A1EB-5877-4B78-8688-FAADA249769C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GrupoEtario"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96A8FFB3-6DD8-4345-9B6B-44907CE27D00}"
+              SQLTask:SqlStatementSource="INSERT INTO Dim_GrupoEtario (DETAIL, DESDE_AGE, HASTA_AGE)&#xA;VALUES &#xA;('teenagers', 13, 19),&#xA;('adultos joven', 20, 39),&#xA;('adultos medios', 40, 50),&#xA;('gerente', 66, 66),&#xA;('adultos', 51, NULL);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -11191,12 +11196,6 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load Dim to Warehouse\Product\Dim_Product.Inputs[OLE DB Destination Input].Columns[PRODUCT_KEY]"
-                          cachedDataType="i4"
-                          cachedName="PRODUCT_KEY"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Product\Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_KEY]"
-                          lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]" />
-                        <inputColumn
                           refId="Package\Load Dim to Warehouse\Product\Dim_Product.Inputs[OLE DB Destination Input].Columns[DETAIL]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -11206,9 +11205,10 @@
                           lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[DETAIL]" />
                         <inputColumn
                           refId="Package\Load Dim to Warehouse\Product\Dim_Product.Inputs[OLE DB Destination Input].Columns[CONTAINER_CAPACITY]"
-                          cachedDataType="wstr"
-                          cachedLength="88"
+                          cachedDataType="numeric"
                           cachedName="CONTAINER_CAPACITY"
+                          cachedPrecision="3"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Load Dim to Warehouse\Product\Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[CONTAINER_CAPACITY]"
                           lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[CONTAINER_CAPACITY]" />
                         <inputColumn
@@ -11218,6 +11218,12 @@
                           cachedName="UNIT"
                           externalMetadataColumnId="Package\Load Dim to Warehouse\Product\Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[UNIT]"
                           lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[UNIT]" />
+                        <inputColumn
+                          refId="Package\Load Dim to Warehouse\Product\Dim_Product.Inputs[OLE DB Destination Input].Columns[PRODUCT_ID]"
+                          cachedDataType="i4"
+                          cachedName="PRODUCT_ID"
+                          externalMetadataColumnId="Package\Load Dim to Warehouse\Product\Dim_Product.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_KEY]"
+                          lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[PRODUCT_ID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -11332,13 +11338,13 @@
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]"
+                          refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[PRODUCT_ID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_KEY]"
-                          lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]"
-                          name="PRODUCT_KEY"
+                          externalMetadataColumnId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_ID]"
+                          lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[PRODUCT_ID]"
+                          name="PRODUCT_ID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[DETAIL]"
@@ -11353,13 +11359,14 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[CONTAINER_CAPACITY]"
-                          dataType="wstr"
+                          dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].ExternalColumns[CONTAINER_CAPACITY]"
-                          length="88"
                           lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[CONTAINER_CAPACITY]"
                           name="CONTAINER_CAPACITY"
+                          precision="3"
+                          scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].Columns[UNIT]"
@@ -11375,9 +11382,9 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_KEY]"
+                          refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_ID]"
                           dataType="i4"
-                          name="PRODUCT_KEY" />
+                          name="PRODUCT_ID" />
                         <externalMetadataColumn
                           refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Output].ExternalColumns[DETAIL]"
                           codePage="1252"
@@ -11403,10 +11410,10 @@
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Error Output].Columns[PRODUCT_KEY]"
+                          refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Error Output].Columns[PRODUCT_ID]"
                           dataType="i4"
-                          lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Error Output].Columns[PRODUCT_KEY]"
-                          name="PRODUCT_KEY" />
+                          lineageId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Error Output].Columns[PRODUCT_ID]"
+                          name="PRODUCT_ID" />
                         <outputColumn
                           refId="Package\Load Dim to Warehouse\Product\Mid_Product_Fix.Outputs[OLE DB Source Error Output].Columns[DETAIL]"
                           codePage="1252"
@@ -11483,6 +11490,650 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\Load Dim to Warehouse\Date"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Dim to Warehouse.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{4E05D076-ADEA-45CE-B140-DE3EE2A241A0}"
+          DTS:From="Package\Load Dim to Warehouse\Date"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Load Dim to Warehouse\GrupoEtario"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Fact to Middle and Warehouse"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{60d6c481-b229-4593-a515-f5a51e859508}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Fact to Middle and Warehouse">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{1be21e1b-46f5-41ad-8c33-8fb950d91629}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fact_Billing in datawarehouse"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Mid_Fact_Billing"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Mid_Fact_Billing]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[middle]"
+                      connectionManagerRefId="Package.ConnectionManagers[middle]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[DATE_KEY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[DATE_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[DATE_KEY]"
+                          name="DATE_KEY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[BILLING_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ID]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[BILLING_ID]"
+                          name="BILLING_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[REGION]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
+                          length="45"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[REGION]"
+                          name="REGION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]"
+                          name="CUSTOMER_KEY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]"
+                          name="EMPLOYEE_KEY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]"
+                          name="PRODUCT_KEY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[GRUPOETARIO_KEY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[GRUPOETARIO_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[GRUPOETARIO_KEY]"
+                          name="GRUPOETARIO_KEY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[QUANTITY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[QUANTITY]"
+                          name="QUANTITY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[PRICE]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[PRICE]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[PRICE]"
+                          name="PRICE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[QUANTITY_LITER]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY_LITER]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[QUANTITY_LITER]"
+                          name="QUANTITY_LITER"
+                          precision="14"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[TOTAL_PRICE]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_PRICE]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[TOTAL_PRICE]"
+                          name="TOTAL_PRICE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          name="TOTAL_PRICE_WITH_DISCOUNT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[DISCOUNT]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[DISCOUNT]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[DISCOUNT]"
+                          name="DISCOUNT"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[DATE_KEY]"
+                          dataType="i4"
+                          name="DATE_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ID]"
+                          dataType="i4"
+                          name="BILLING_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
+                          dataType="wstr"
+                          length="45"
+                          name="REGION" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_KEY]"
+                          dataType="i4"
+                          name="CUSTOMER_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_KEY]"
+                          dataType="i4"
+                          name="EMPLOYEE_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_KEY]"
+                          dataType="i4"
+                          name="PRODUCT_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[GRUPOETARIO_KEY]"
+                          dataType="i4"
+                          name="GRUPOETARIO_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY]"
+                          dataType="i4"
+                          name="QUANTITY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[PRICE]"
+                          dataType="r8"
+                          name="PRICE" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY_LITER]"
+                          dataType="numeric"
+                          name="QUANTITY_LITER"
+                          precision="14"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_PRICE]"
+                          dataType="r8"
+                          name="TOTAL_PRICE" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          dataType="r8"
+                          name="TOTAL_PRICE_WITH_DISCOUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].ExternalColumns[DISCOUNT]"
+                          dataType="i2"
+                          name="DISCOUNT" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[DATE_KEY]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[DATE_KEY]"
+                          name="DATE_KEY" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[BILLING_ID]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[BILLING_ID]"
+                          name="BILLING_ID" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[REGION]"
+                          dataType="wstr"
+                          length="45"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[REGION]"
+                          name="REGION" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_KEY]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_KEY]"
+                          name="CUSTOMER_KEY" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_KEY]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_KEY]"
+                          name="EMPLOYEE_KEY" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[PRODUCT_KEY]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[PRODUCT_KEY]"
+                          name="PRODUCT_KEY" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[GRUPOETARIO_KEY]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[GRUPOETARIO_KEY]"
+                          name="GRUPOETARIO_KEY" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[QUANTITY]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[QUANTITY]"
+                          name="QUANTITY" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[PRICE]"
+                          dataType="r8"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[PRICE]"
+                          name="PRICE" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[QUANTITY_LITER]"
+                          dataType="numeric"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[QUANTITY_LITER]"
+                          name="QUANTITY_LITER"
+                          precision="14"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[TOTAL_PRICE]"
+                          dataType="r8"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[TOTAL_PRICE]"
+                          name="TOTAL_PRICE" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          dataType="r8"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          name="TOTAL_PRICE_WITH_DISCOUNT" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[DISCOUNT]"
+                          dataType="i2"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[DISCOUNT]"
+                          name="DISCOUNT" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Fact_Billing]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[datawarehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[datawarehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATE_KEY]"
+                          cachedDataType="i4"
+                          cachedName="DATE_KEY"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[DATE_KEY]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[REGION]"
+                          cachedDataType="wstr"
+                          cachedLength="45"
+                          cachedName="REGION"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[REGION]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CUSTOMER_KEY]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_KEY"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_KEY]"
+                          cachedDataType="i4"
+                          cachedName="EMPLOYEE_KEY"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCT_KEY]"
+                          cachedDataType="i4"
+                          cachedName="PRODUCT_KEY"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GRUPOETARIO_KEY]"
+                          cachedDataType="i4"
+                          cachedName="GRUPOETARIO_KEY"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GRUPOETARIO_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[GRUPOETARIO_KEY]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QUANTITY]"
+                          cachedDataType="i4"
+                          cachedName="QUANTITY"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[QUANTITY]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRICE]"
+                          cachedDataType="r8"
+                          cachedName="PRICE"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[PRICE]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QUANTITY_LITER]"
+                          cachedDataType="numeric"
+                          cachedName="QUANTITY_LITER"
+                          cachedPrecision="14"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY_LITER]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[QUANTITY_LITER]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TOTAL_PRICE]"
+                          cachedDataType="r8"
+                          cachedName="TOTAL_PRICE"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_PRICE]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[TOTAL_PRICE]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          cachedDataType="r8"
+                          cachedName="TOTAL_PRICE_WITH_DISCOUNT"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[TOTAL_PRICE_WITH_DISCOUNT]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DISCOUNT]"
+                          cachedDataType="i2"
+                          cachedName="DISCOUNT"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[DISCOUNT]" />
+                        <inputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BILLING_ID]"
+                          cachedDataType="i4"
+                          cachedName="BILLING_ID"
+                          externalMetadataColumnId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_KEY]"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output].Columns[BILLING_ID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_KEY]"
+                          dataType="i4"
+                          name="BILLING_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_KEY]"
+                          dataType="i4"
+                          name="PRODUCT_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATE_KEY]"
+                          dataType="i4"
+                          name="DATE_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_KEY]"
+                          dataType="i4"
+                          name="CUSTOMER_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_KEY]"
+                          dataType="i4"
+                          name="EMPLOYEE_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GRUPOETARIO_KEY]"
+                          dataType="i4"
+                          name="GRUPOETARIO_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                          dataType="wstr"
+                          length="45"
+                          name="REGION" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                          dataType="i4"
+                          name="QUANTITY" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                          dataType="r8"
+                          name="PRICE" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY_LITER]"
+                          dataType="numeric"
+                          name="QUANTITY_LITER"
+                          precision="14"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_PRICE]"
+                          dataType="r8"
+                          name="TOTAL_PRICE" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_PRICE_WITH_DISCOUNT]"
+                          dataType="r8"
+                          name="TOTAL_PRICE_WITH_DISCOUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
+                          dataType="i2"
+                          name="DISCOUNT" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse.Paths[OLE DB Source Output]"
+                  endId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Fact to Middle and Warehouse\Mid_Fact_Billing"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{96A47931-6EE5-4796-AAF4-5C255B14287E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Mid_Fact_Billing"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{125EB46D-8A18-4492-9CBB-193279B1EBF4}"
+              SQLTask:SqlStatementSource="--Juntamos en una tabla temporal llamada &quot;BILLING_TEMP&quot; las tablas Mid_Billing y Mid_Billing_Detail de la base de datos intermedia&#xA;SELECT billing.*, detail.PRODUCT_ID, detail.QUANTITY&#xA;INTO #Billing&#xA;FROM Mid_Billing billing &#xA;JOIN Mid_Billing_Detail detail&#xA;ON billing.BILLING_ID = detail.BILLING_ID&#xA;&#xA;--Unimos la tabal temporal #Billing con la tabla Mid_Billing_history en una nueva tabla temporal llamada #Fact_Billing&#xA;SELECT &#xA;    history.date AS DATE,&#xA;    history.billing_id AS BILLING_ID,&#xA;    history.region AS REGION,&#xA;    history.customer_id AS CUSTOMER_ID,&#xA;    history.employee_id AS EMPLOYEE_ID,&#xA;    history.product_id AS PRODUCT_ID,&#xA;    history.quantity AS QUANTITY&#xA;&#xA;INTO #Fact_Billing&#xA;FROM Mid_Billing_history history&#xA;&#xA;UNION ALL&#xA;&#xA;SELECT &#xA;    temp.DATE,&#xA;    temp.BILLING_ID,&#xA;    temp.REGION,&#xA;    temp.CUSTOMER_ID,&#xA;    temp.EMPLOYEE_ID,&#xA;    temp.PRODUCT_ID,&#xA;    temp.QUANTITY&#xA;FROM #Billing temp;&#xA;&#xA;-- Creamos una tabla temporal para almacenar los resultados de la suma de las cantidades&#xA;SELECT &#xA;    BILLING_ID, &#xA;    PRODUCT_ID, &#xA;    SUM(QUANTITY) as QUANTITY&#xA;INTO #Temp&#xA;FROM #Fact_Billing&#xA;GROUP BY BILLING_ID, PRODUCT_ID;&#xA;&#xA;WITH CTE AS (&#xA;    SELECT *,&#xA;    ROW_NUMBER() OVER(PARTITION BY BILLING_ID, PRODUCT_ID ORDER BY (SELECT NULL)) AS rn&#xA;    FROM #Fact_Billing&#xA;)&#xA;DELETE FROM CTE WHERE rn &gt; 1;&#xA;&#xA;-- Creamos una tabla llamada Fact_Billing_Fix donde insertaremos la quantity calculada previamente &#xA;SELECT &#xA;        F.DATE,&#xA;        F.BILLING_ID,&#xA;        F.REGION,&#xA;        F.CUSTOMER_ID,&#xA;        F.EMPLOYEE_ID,&#xA;        F.PRODUCT_ID,&#xA;        T.QUANTITY&#xA;    INTO #Fact_Billing_Fix&#xA;    FROM &#xA;        #Fact_Billing AS F&#xA;    JOIN &#xA;        #Temp AS T ON T.BILLING_ID = F.BILLING_ID and T.PRODUCT_ID = F.PRODUCT_ID&#xA;&#xA;--Minimo&#xA;SELECT PRODUCT_ID, min(DATE) as Minimo &#xA;INTO #minimo&#xA;FROM Mid_Price&#xA;group by PRODUCT_ID&#xA;&#xA;--Medio&#xA;SELECT medio.PRODUCT_ID, min(medio.DATE) as Medio &#xA;INTO #medio&#xA;FROM Mid_Price medio&#xA;&#x9;left join #minimo minimo&#xA;&#x9;&#x9;ON medio.PRODUCT_ID = minimo.PRODUCT_ID&#xA;&#x9;&#x9;and medio.DATE = minimo.Minimo&#xA;WHERE 1=1&#xA;&#x9;and minimo.Minimo is null&#xA;group by medio.PRODUCT_ID&#xA;&#xA;--Maximo&#xA;SELECT PRODUCT_ID, max(DATE) as Maximo &#xA;INTO #maximo&#xA;FROM Mid_Price&#xA;--WHERE PRODUCT_ID = 3&#xA;group by PRODUCT_ID&#xA;&#xA;--Desde hasta&#xA;SELECT minimo.PRODUCT_ID, minimo.minimo AS Desde, medio.medio AS Hasta&#xA;INTO #PriceWithFromTo&#xA;FROM #minimo minimo&#xA;&#x9;join #medio medio&#xA;&#x9;&#x9;ON minimo.PRODUCT_ID = medio.PRODUCT_ID&#xA;union all&#xA;SELECT medio.PRODUCT_ID, medio.medio, maximo.maximo&#xA;FROM #medio medio&#xA;&#x9;join #maximo maximo&#xA;&#x9;&#x9;ON medio.PRODUCT_ID = maximo.PRODUCT_ID&#xA;union all&#xA;SELECT maximo.PRODUCT_ID, maximo.maximo, null&#xA;FROM #maximo maximo&#xA;&#xA;--Agregar columna PRICE&#xA;SELECT PRODUCT_ID, Desde, Hasta, PRICE&#xA;INTO #PriceWithPrice&#xA;FROM (&#xA;&#x9;SELECT p.PRODUCT_ID, p.Desde, p.Hasta, m.PRICE,&#xA;&#x9;&#x9;ROW_NUMBER() over (partition by p.PRODUCT_ID, p.Desde, p.Hasta order by m.DATE) as rn&#xA;&#x9;FROM #PriceWithFromTo p&#xA;&#x9;&#x9;join Mid_Price m&#xA;&#x9;&#x9;&#x9;ON p.PRODUCT_ID = m.PRODUCT_ID&#xA;&#x9;WHERE m.DATE between p.Desde and isnull(p.Hasta, m.DATE)&#xA;) t&#xA;WHERE rn = 1&#xA;&#xA;--Agregar columna PRICE a #Fact&#xA;SELECT f.DATE, f.BILLING_ID, f.REGION, f.CUSTOMER_ID, f.EMPLOYEE_ID, f.PRODUCT_ID, f.QUANTITY, p.PRICE&#xA;INTO #Fact&#xA;FROM #Fact_Billing_Fix f&#xA;&#x9;join #PriceWithPrice p&#xA;&#x9;&#x9;ON f.PRODUCT_ID = p.PRODUCT_ID&#xA;WHERE f.DATE between p.Desde and isnull(p.Hasta, f.DATE)&#xA;&#xA;SELECT f.DATE, f.BILLING_ID, f.REGION, f.CUSTOMER_ID, f.EMPLOYEE_ID, f.PRODUCT_ID, f.QUANTITY, p.PRICE&#xA;INTO #Fact_Billing_With_Price&#xA;FROM #Fact_Billing_Fix f&#xA;&#x9;join #PriceWithPrice p&#xA;&#x9;&#x9;ON f.PRODUCT_ID = p.PRODUCT_ID&#xA;WHERE f.DATE between p.Desde and isnull(p.Hasta, f.DATE)&#xA;&#xA;--Agregar columna QUANTITY_LITER a #Fact_Billing_With_Price&#xA;select f.DATE, f.BILLING_ID, f.REGION, f.CUSTOMER_ID, f.EMPLOYEE_ID, f.PRODUCT_ID, f.QUANTITY, f.PRICE, d.CONTAINER_CAPACITY * f.QUANTITY as QUANTITY_LITER&#xA;into #Fact_Billing_With_Quantity_Liter&#xA;from #Fact_Billing_With_Price f&#xA;&#x9;join datawarehouse.dbo.Dim_Product d&#xA;&#x9;&#x9;on f.PRODUCT_ID = d.PRODUCT_KEY&#xA;&#xA;--Agregar columna TOTAL_PRICE a #Fact_Billing_Quantity_Liter&#xA;SELECT DATE, BILLING_ID, REGION, CUSTOMER_ID, EMPLOYEE_ID, PRODUCT_ID, QUANTITY, PRICE, QUANTITY_LITER, QUANTITY * PRICE as TOTAL_PRICE&#xA;INTO #Fact_Billing_With_Total_Price&#xA;FROM #Fact_Billing_With_Quantity_Liter&#xA;&#xA;-- Agregar columna DISCOUNT a #Fact_Billing_With_Total_Price&#xA;SELECT f.DATE, f.BILLING_ID, f.REGION, f.CUSTOMER_ID, f.EMPLOYEE_ID, f.PRODUCT_ID, f.QUANTITY, f.PRICE, f.QUANTITY_LITER, f.TOTAL_PRICE, ISNULL(d.PERCENTAGE, 0) as DISCOUNT&#xA;INTO #Fact_Billing_With_Discount&#xA;FROM #Fact_Billing_With_Total_Price f&#xA;LEFT JOIN Mid_Discounts d&#xA;    ON f.TOTAL_PRICE &gt;= d.TOTAL_BILLING&#xA;    AND (f.DATE BETWEEN d.DESDE AND ISNULL(d.HASTA, f.DATE))&#xA;&#xA;-- Aplicar descuento a TOTAL_PRICE&#xA;SELECT DATE, BILLING_ID, REGION, CUSTOMER_ID, EMPLOYEE_ID, PRODUCT_ID, QUANTITY, PRICE, QUANTITY_LITER, TOTAL_PRICE, TOTAL_PRICE * (1 - DISCOUNT / 100.0) as TOTAL_PRICE_WITH_DISCOUNT, DISCOUNT&#xA;INTO #Fact_Billing_With_Discount_And_Total_Price&#xA;FROM #Fact_Billing_With_Discount&#xA;&#xA;-- Crear tabla Fact_Billing solo si no existe&#xA;IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Mid_Fact_Billing' AND type = 'U')&#xA;BEGIN&#xA;    -- Crear tabla Fact_Billing&#xA;    SELECT &#xA;        D.DATE_KEY,&#xA;        F.BILLING_ID,&#xA;        F.REGION,&#xA;        C.CUSTOMER_KEY,&#xA;        E.EMPLOYEE_KEY,&#xA;        P.PRODUCT_KEY,&#xA;        G.GRUPOETARIO_KEY,&#xA;        F.QUANTITY,&#xA;        F.PRICE,&#xA;        F.QUANTITY_LITER,&#xA;        F.TOTAL_PRICE,&#xA;        F.TOTAL_PRICE_WITH_DISCOUNT,&#xA;        F.DISCOUNT&#xA;    INTO Mid_Fact_Billing&#xA;    FROM &#xA;        #Fact_Billing_With_Discount_And_Total_Price AS F&#xA;    LEFT JOIN &#xA;        datawarehouse.dbo.Dim_Date AS D ON CAST(F.DATE AS DATE) = D.DATE&#xA;    LEFT JOIN &#xA;        datawarehouse.dbo.Dim_Customer as C ON F.CUSTOMER_ID = C.CUSTOMER_ID&#xA;    LEFT JOIN &#xA;        datawarehouse.dbo.Dim_Product as P ON F.PRODUCT_ID = P.PRODUCT_KEY&#xA;    LEFT JOIN &#xA;        datawarehouse.dbo.Dim_Employee as E ON F.EMPLOYEE_ID = E.EMPLOYEE_ID&#xA;    CROSS APPLY &#xA;        (SELECT TOP 1 GRUPOETARIO_KEY FROM datawarehouse.dbo.Dim_GrupoEtario &#xA;         WHERE DATEDIFF(year, C.BIRTH_DATE, D.DATE) BETWEEN DESDE_AGE AND ISNULL(HASTA_AGE, DATEDIFF(year, C.BIRTH_DATE, D.DATE)) &#xA;         ORDER BY DESDE_AGE DESC) AS G&#xA;END&#xA;&#xA;--Se repite 2 veces BILLING_ID= 635996 and PRODUCT_KEY= 27" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Fact to Middle and Warehouse.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A1E45214-37FE-4598-86AA-8D0B656B3149}"
+          DTS:From="Package\Load Fact to Middle and Warehouse\Mid_Fact_Billing"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse"
           DTS:Value="2" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -11690,6 +12341,12 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[CUSTOMER_ID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_ID"
+                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                          lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]" />
+                        <inputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[CITY]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -11710,6 +12367,12 @@
                           externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[ZIPCODE]"
                           lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[ZIPCODE]" />
                         <inputColumn
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="BIRTH_DATE"
+                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
+                          lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]" />
+                        <inputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[TYPE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -11718,34 +12381,40 @@
                           externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[TYPE]"
                           lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[TYPE]" />
                         <inputColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE_FIX]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="BIRTH_DATE_FIX"
-                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
-                          lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE_FIX]" />
-                        <inputColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[CUSTOMER_ID]"
-                          cachedDataType="i4"
-                          cachedName="CUSTOMER_ID"
-                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
-                          lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]" />
-                        <inputColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[LAST_NAME]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="LAST_NAME"
-                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
-                          lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]" />
-                        <inputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[FIRST_NAME]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="FIRST_NAME"
                           externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
                           lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[FIRST_NAME]" />
+                        <inputColumn
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].Columns[LAST_NAME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="LAST_NAME"
+                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
+                          lineageId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output].Columns[LAST_NAME]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                          dataType="i4"
+                          name="CUSTOMER_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="FIRST_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="LAST_NAME" />
                         <externalMetadataColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
                           dataType="wstr"
@@ -11767,29 +12436,9 @@
                           length="50"
                           name="TYPE" />
                         <externalMetadataColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_KEY]"
-                          dataType="i4"
-                          name="CUSTOMER_KEY" />
-                        <externalMetadataColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[BIRTH_DATE]"
                           dataType="dbDate"
                           name="BIRTH_DATE" />
-                        <externalMetadataColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
-                          dataType="i4"
-                          name="CUSTOMER_ID" />
-                        <externalMetadataColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[FIRST_NAME]"
-                          codePage="1252"
-                          dataType="str"
-                          length="255"
-                          name="FIRST_NAME" />
-                        <externalMetadataColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input].ExternalColumns[LAST_NAME]"
-                          codePage="1252"
-                          dataType="str"
-                          length="255"
-                          name="LAST_NAME" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -11928,13 +12577,13 @@
                           name="ZIPCODE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_FIX]"
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE_FIX]"
-                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_FIX]"
-                          name="BIRTH_DATE_FIX"
+                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
+                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -11963,9 +12612,9 @@
                           dataType="i8"
                           name="ZIPCODE" />
                         <externalMetadataColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE_FIX]"
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
                           dataType="dbTimeStamp"
-                          name="BIRTH_DATE_FIX" />
+                          name="BIRTH_DATE" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -11985,6 +12634,11 @@
                           lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Error Output].Columns[FULL_NAME]"
                           name="FULL_NAME" />
                         <outputColumn
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE" />
+                        <outputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Error Output].Columns[CITY]"
                           dataType="wstr"
                           length="255"
@@ -12001,11 +12655,6 @@
                           dataType="i8"
                           lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Error Output].Columns[ZIPCODE]"
                           name="ZIPCODE" />
-                        <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE_FIX]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE_FIX]"
-                          name="BIRTH_DATE_FIX" />
                         <outputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -12133,13 +12782,13 @@
                           name="ZIPCODE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_FIX]"
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE_FIX]"
-                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_FIX]"
-                          name="BIRTH_DATE_FIX"
+                          externalMetadataColumnId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
+                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -12168,9 +12817,9 @@
                           dataType="i8"
                           name="ZIPCODE" />
                         <externalMetadataColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE_FIX]"
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
                           dataType="dbTimeStamp"
-                          name="BIRTH_DATE_FIX" />
+                          name="BIRTH_DATE" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -12190,6 +12839,11 @@
                           lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Error Output].Columns[FULL_NAME]"
                           name="FULL_NAME" />
                         <outputColumn
+                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE" />
+                        <outputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Error Output].Columns[CITY]"
                           dataType="wstr"
                           length="255"
@@ -12206,11 +12860,6 @@
                           dataType="i8"
                           lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Error Output].Columns[ZIPCODE]"
                           name="ZIPCODE" />
-                        <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE_FIX]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE_FIX]"
-                          name="BIRTH_DATE_FIX" />
                         <outputColumn
                           refId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -12266,13 +12915,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">"Minorista"</property>
+                              name="Expression">"Mayorista"</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">"Minorista"</property>
+                              name="FriendlyExpression">"Mayorista"</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -12459,16 +13108,16 @@
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Transformación Data\Customer R and W\Union All.Inputs[Union All Input 1].Columns[BIRTH_DATE_FIX]"
+                          refId="Package\Transformación Data\Customer R and W\Union All.Inputs[Union All Input 1].Columns[BIRTH_DATE]"
                           cachedDataType="dbTimeStamp"
-                          cachedName="BIRTH_DATE_FIX"
-                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_FIX]">
+                          cachedName="BIRTH_DATE"
+                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_R.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE_FIX]}</property>
+                              name="OutputColumnLineageID">#{Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -12563,22 +13212,23 @@
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Transformación Data\Customer R and W\Union All.Inputs[Union All Input 2].Columns[BIRTH_DATE_FIX]"
+                          refId="Package\Transformación Data\Customer R and W\Union All.Inputs[Union All Input 2].Columns[BIRTH_DATE]"
                           cachedDataType="dbTimeStamp"
-                          cachedName="BIRTH_DATE_FIX"
-                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_FIX]">
+                          cachedName="BIRTH_DATE"
+                          lineageId="Package\Transformación Data\Customer R and W\Mid_Customer_W.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE_FIX]}</property>
+                              name="OutputColumnLineageID">#{Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Transformación Data\Customer R and W\Union All.Inputs[Union All Input 2].Columns[TYPE]"
-                          cachedDataType="wstr"
-                          cachedLength="9"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="TYPE"
                           lineageId="Package\Transformación Data\Customer R and W\Type &quot;Mayorista&quot;.Outputs[Derived Column Output].Columns[TYPE]">
                           <properties>
@@ -12634,10 +13284,10 @@
                           lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[ZIPCODE]"
                           name="ZIPCODE" />
                         <outputColumn
-                          refId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE_FIX]"
+                          refId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]"
                           dataType="dbTimeStamp"
-                          lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE_FIX]"
-                          name="BIRTH_DATE_FIX" />
+                          lineageId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE" />
                         <outputColumn
                           refId="Package\Transformación Data\Customer R and W\Union All.Outputs[Union All Output 1].Columns[TYPE]"
                           codePage="1252"
@@ -12654,19 +13304,19 @@
               <paths>
                 <path
                   refId="Package\Transformación Data\Customer R and W.Paths[Derived Column Output]"
-                  endId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input]"
-                  name="Derived Column Output"
-                  startId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Transformación Data\Customer R and W.Paths[Derived Column Output1]"
                   endId="Package\Transformación Data\Customer R and W\Union All.Inputs[Union All Input 1]"
                   name="Derived Column Output"
                   startId="Package\Transformación Data\Customer R and W\Type &quot;Minorista&quot;.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Transformación Data\Customer R and W.Paths[Derived Column Output2]"
+                  refId="Package\Transformación Data\Customer R and W.Paths[Derived Column Output1]"
                   endId="Package\Transformación Data\Customer R and W\Union All.Inputs[Union All Input 2]"
                   name="Derived Column Output"
                   startId="Package\Transformación Data\Customer R and W\Type &quot;Mayorista&quot;.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Transformación Data\Customer R and W.Paths[Derived Column Output2]"
+                  endId="Package\Transformación Data\Customer R and W\Mid_Customer.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Transformación Data\Customer R and W\First and last name.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Transformación Data\Customer R and W.Paths[OLE DB Source Output]"
                   endId="Package\Transformación Data\Customer R and W\Type &quot;Minorista&quot;.Inputs[Derived Column Input]"
@@ -12730,28 +13380,6 @@
                       name="Derived Column Output"
                       synchronousInputId="Package\Transformación Data\Date\Columns DATE_ID, SEMESTER, BIMESTER, DATE, YEAR, MONTH and DAY.Inputs[Derived Column Input]">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Transformación Data\Date\Columns DATE_ID, SEMESTER, BIMESTER, DATE, YEAR, MONTH and DAY.Outputs[Derived Column Output].Columns[DATE_KEY]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Transformación Data\Date\Columns DATE_ID, SEMESTER, BIMESTER, DATE, YEAR, MONTH and DAY.Outputs[Derived Column Output].Columns[DATE_KEY]"
-                          name="DATE_KEY"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_I4)(([YEAR](#{Package\Transformación Data\Date\Mid_Date.Outputs[OLE DB Source Output].Columns[date]}) * 10000) + ([MONTH](#{Package\Transformación Data\Date\Mid_Date.Outputs[OLE DB Source Output].Columns[date]}) * 100) + [DAY](#{Package\Transformación Data\Date\Mid_Date.Outputs[OLE DB Source Output].Columns[date]}))</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_I4)((YEAR(date) * 10000) + (MONTH(date) * 100) + DAY(date))</property>
-                          </properties>
-                        </outputColumn>
                         <outputColumn
                           refId="Package\Transformación Data\Date\Columns DATE_ID, SEMESTER, BIMESTER, DATE, YEAR, MONTH and DAY.Outputs[Derived Column Output].Columns[SEMESTER]"
                           dataType="wstr"
@@ -12884,6 +13512,28 @@
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
                               name="FriendlyExpression">DAY(date)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Transformación Data\Date\Columns DATE_ID, SEMESTER, BIMESTER, DATE, YEAR, MONTH and DAY.Outputs[Derived Column Output].Columns[DATE_KEY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Transformación Data\Date\Columns DATE_ID, SEMESTER, BIMESTER, DATE, YEAR, MONTH and DAY.Outputs[Derived Column Output].Columns[DATE_KEY]"
+                          name="DATE_KEY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_I4)(([YEAR](#{Package\Transformación Data\Date\Mid_Date.Outputs[OLE DB Source Output].Columns[date]}) * 10000) + ([MONTH](#{Package\Transformación Data\Date\Mid_Date.Outputs[OLE DB Source Output].Columns[date]}) * 100) + [DAY](#{Package\Transformación Data\Date\Mid_Date.Outputs[OLE DB Source Output].Columns[date]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I4)((YEAR(date) * 10000) + (MONTH(date) * 100) + DAY(date))</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -14098,10 +14748,6 @@
                           length="255"
                           name="LAST_NAME" />
                         <externalMetadataColumn
-                          refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_KEY]"
-                          dataType="i4"
-                          name="EMPLOYEE_KEY" />
-                        <externalMetadataColumn
                           refId="Package\Transformación Data\Employee\Mid_Employee_Fix.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
                           dataType="i4"
                           name="EMPLOYEE_ID" />
@@ -14582,6 +15228,14 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
+                          refId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].Columns[PRODUCT_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PRODUCT_ID"
+                          externalMetadataColumnId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                          lineageId="Package\Transformación Data\Product\Mid_Product.Outputs[OLE DB Source Output].Columns[PRODUCT_ID]" />
+                        <inputColumn
                           refId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].Columns[DETAIL]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -14604,21 +15258,13 @@
                           cachedName="UNIT"
                           externalMetadataColumnId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].ExternalColumns[UNIT]"
                           lineageId="Package\Transformación Data\Product\Divide text numbers.Outputs[Derived Column Output].Columns[UNIT]" />
-                        <inputColumn
-                          refId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].Columns[PRODUCT_ID]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="PRODUCT_ID"
-                          externalMetadataColumnId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_KEY]"
-                          lineageId="Package\Transformación Data\Product\Mid_Product.Outputs[OLE DB Source Output].Columns[PRODUCT_ID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_KEY]"
+                          refId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
                           dataType="i4"
-                          name="PRODUCT_KEY" />
+                          name="PRODUCT_ID" />
                         <externalMetadataColumn
                           refId="Package\Transformación Data\Product\Mid_Product_Fix.Inputs[OLE DB Destination Input].ExternalColumns[DETAIL]"
                           codePage="1252"
@@ -14731,7 +15377,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{15698937-51B6-47D4-ABB0-764E6B23FFA5}"
-      DTS:From="Package\Delet data dim"
+      DTS:From="Package\Delet data datawarehouse"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Load Dim to Warehouse"
@@ -14761,7 +15407,7 @@
       DTS:From="Package\Transformación Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Delet data dim"
+      DTS:To="Package\Delet data datawarehouse"
       DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
@@ -14771,6 +15417,33 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Cleaning Data"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{8B1C7440-ACC5-46BA-8FD4-8D1B0FECDB8C}"
+      DTS:From="Package\Load Fact to Middle and Warehouse"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Delet data staging end"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{6C30C84F-2F9C-4FEF-97C1-D472C5FC3D14}"
+      DTS:From="Package\Load Dim to Warehouse"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Load Fact to Middle and Warehouse"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{DEFC1AE5-A61B-4CC6-B7D5-C236BFD610BC}"
+      DTS:From="Package\Delet data staging end"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Delet data middle end"
       DTS:Value="2" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -14909,17 +15582,25 @@
           Id="Package\Cleaning Data"
           TopLeft="483,237" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Delet data dim"
+          Size="207,42"
+          Id="Package\Delet data datawarehouse"
           TopLeft="1341,137" />
         <NodeLayout
           Size="165,42"
           Id="Package\Delet data middle"
           TopLeft="528,138" />
         <NodeLayout
+          Size="186,42"
+          Id="Package\Delet data middle end"
+          TopLeft="1771,638" />
+        <NodeLayout
           Size="168,42"
           Id="Package\Delet data staging"
           TopLeft="134,144" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Delet data staging end"
+          TopLeft="1775,553" />
         <NodeLayout
           Size="232,42"
           Id="Package\Extraction data to Staging\Load Billing history SQL Server"
@@ -15050,11 +15731,15 @@
         <NodeLayout
           Size="102,42"
           Id="Package\Load Dim to Warehouse\Date"
-          TopLeft="101,296" />
+          TopLeft="91,296" />
         <NodeLayout
           Size="128,42"
           Id="Package\Load Dim to Warehouse\Employee"
           TopLeft="87,119" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Load Dim to Warehouse\GrupoEtario"
+          TopLeft="77,376" />
         <NodeLayout
           Size="117,42"
           Id="Package\Load Dim to Warehouse\Product"
@@ -15109,7 +15794,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Dim to Warehouse.PrecedenceConstraints[Constraint 2]"
-          TopLeft="150.75,251">
+          TopLeft="145.75,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15131,13 +15816,76 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim to Warehouse.PrecedenceConstraints[Constraint 3]"
+          TopLeft="144,338">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,9.4453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="297,399"
-          Size="297,442"
+          PanelSize="297,471"
+          Size="297,514"
           Id="Package\Load Dim to Warehouse"
           TopLeft="1286,240" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse"
+          TopLeft="49.8888888888885,125.333333333333" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load Fact to Middle and Warehouse\Mid_Fact_Billing"
+          TopLeft="84,27" />
+        <EdgeLayout
+          Id="Package\Load Fact to Middle and Warehouse.PrecedenceConstraints[Constraint]"
+          TopLeft="163.444444444444,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.333333333333"
+              Start="0,0"
+              End="0,48.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,18.6119791666665,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="297,222"
+          Size="297,265"
+          Id="Package\Load Fact to Middle and Warehouse"
+          TopLeft="1727.88888888889,241.444444444444" />
         <NodeLayout
           Size="172,42"
           Id="Package\Transformación Data\Customer R and W"
@@ -15265,31 +16013,43 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="132.028880208334,-21.3581201665675,50.60890625,11.609375"
+              BoundingBox="132.028880208333,-21.3581201665675,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1437.08333333333,179">
+          TopLeft="1477.66666666667,179">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="-43.1666666666667,61"
               Start="0,0"
-              End="0,53.5">
+              End="-43.1666666666667,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,20.6807286673058" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6807286673058"
+                    Point2="0,24.6807286673058"
+                    Point3="-4,24.6807286673058" />
+                  <mssgle:LineSegment
+                    End="-39.1666666666667,24.6807286673058" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.1666666666667,24.6807286673058"
+                    Point2="-43.1666666666667,24.6807286673058"
+                    Point3="-43.1666666666667,28.6807286673058" />
+                  <mssgle:LineSegment
+                    End="-43.1666666666667,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,20.9453125,50.60890625,11.609375"
+              BoundingBox="-46.8877864583334,29.6807286673058,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15371,33 +16131,33 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="357.833333333333,-56"
+              EndConnector="376.833333333333,-56"
               Start="0,0"
-              End="357.833333333333,-48.5">
+              End="376.833333333333,-48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-29.245382585752" />
+                    End="0,-29.3422818791946" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-29.245382585752"
-                    Point2="0,-33.245382585752"
-                    Point3="4,-33.245382585752" />
+                    Point1="0,-29.3422818791946"
+                    Point2="0,-33.3422818791946"
+                    Point3="4,-33.3422818791946" />
                   <mssgle:LineSegment
-                    End="353.833333333333,-33.245382585752" />
+                    End="372.833333333333,-33.3422818791946" />
                   <mssgle:CubicBezierSegment
-                    Point1="353.833333333333,-33.245382585752"
-                    Point2="357.833333333333,-33.245382585752"
-                    Point3="357.833333333333,-37.245382585752" />
+                    Point1="372.833333333333,-33.3422818791946"
+                    Point2="376.833333333333,-33.3422818791946"
+                    Point3="376.833333333333,-37.3422818791946" />
                   <mssgle:LineSegment
-                    End="357.833333333333,-48.5" />
+                    End="376.833333333333,-48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="153.612213541667,-28.245382585752,50.60890625,11.609375"
+              BoundingBox="163.112213541667,-28.3422818791946,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15422,6 +16182,90 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-25.304453125,18.9453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="1872.94444444445,506.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.555555555556"
+              Start="0,0"
+              End="0,39.055555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.055555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,13.723090277778,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="1583,497">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.88888888889,-123.055555555556"
+              Start="0,0"
+              End="137.38888888889,-123.055555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68.444444444445,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.444444444445,0"
+                    Point2="72.444444444445,0"
+                    Point3="72.444444444445,-4" />
+                  <mssgle:LineSegment
+                    End="72.444444444445,-119.055555555556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.444444444445,-119.055555555556"
+                    Point2="72.444444444445,-123.055555555556"
+                    Point3="76.444444444445,-123.055555555556" />
+                  <mssgle:LineSegment
+                    End="137.38888888889,-123.055555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="47.139991319445,1,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="1866.75,595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,11.9453125,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15728,6 +16572,19 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cleaning Data\Billings\Mid_Billing">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Cleaning Data\Customer R and W">
     <LayoutInfo>
@@ -15780,7 +16637,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15802,7 +16661,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15824,7 +16685,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15846,7 +16709,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15946,7 +16811,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15980,7 +16847,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16014,7 +16883,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16063,6 +16934,14 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="99,42"
+          Id="Package\Cleaning Data\Employee\Sort"
+          TopLeft="525,289" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Cleaning Data\Employee\Conditional Split"
+          TopLeft="499,384" />
+        <NodeLayout
           Size="168,42"
           Id="Package\Cleaning Data\Employee\STG_EMPLOYEE"
           TopLeft="493,145" />
@@ -16070,36 +16949,6 @@
           Size="152,42"
           Id="Package\Cleaning Data\Employee\Mid_Employee"
           TopLeft="522,490" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\Cleaning Data\Employee\Sort"
-          TopLeft="525,289" />
-        <EdgeLayout
-          Id="Package\Cleaning Data\Employee.Paths[OLE DB Source Output]"
-          TopLeft="575.75,187">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,102"
-              Start="0,0"
-              End="0,94.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,94.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Cleaning Data\Employee\Conditional Split"
-          TopLeft="499,384" />
         <EdgeLayout
           Id="Package\Cleaning Data\Employee.Paths[Sort Output]"
           TopLeft="576.5,331">
@@ -16119,7 +16968,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cleaning Data\Employee.Paths[OLE DB Source Output]"
+          TopLeft="575.75,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,102"
+              Start="0,0"
+              End="0,94.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,94.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16162,7 +17037,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Cleaning Data\Employee\Mid_Employee">
+    design-time-name="Package\Cleaning Data\Employee\STG_EMPLOYEE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16175,7 +17050,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Cleaning Data\Employee\STG_EMPLOYEE">
+    design-time-name="Package\Cleaning Data\Employee\Mid_Employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16191,7 +17066,7 @@
     design-time-name="Package\Cleaning Data\Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="141,42"
           Id="Package\Cleaning Data\Product\Mid_Product"
@@ -16223,7 +17098,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16245,7 +17122,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17007,37 +17886,35 @@
     design-time-name="Package\Load Dim to Warehouse\Customer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Load Dim to Warehouse\Customer\Dim_Customer"
+          TopLeft="632,341" />
         <NodeLayout
           Size="151,42"
           Id="Package\Load Dim to Warehouse\Customer\Mid_Customer"
           TopLeft="630,172" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Load Dim to Warehouse\Customer\Dim_Customer"
-          TopLeft="626,369" />
         <EdgeLayout
           Id="Package\Load Dim to Warehouse\Customer.Paths[OLE DB Source Output]"
-          TopLeft="703.75,214">
+          TopLeft="706.75,214">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,155"
+              EndConnector="0,127"
               Start="0,0"
-              End="0,147.5">
+              End="0,119.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,147.5" />
+                    End="0,119.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17081,21 +17958,21 @@
         <NodeLayout
           Size="128,42"
           Id="Package\Load Dim to Warehouse\Date\Dim_Date"
-          TopLeft="412,372" />
+          TopLeft="421,328" />
         <EdgeLayout
           Id="Package\Load Dim to Warehouse\Date.Paths[OLE DB Source Output]"
-          TopLeft="478.75,188">
+          TopLeft="483.25,188">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,184"
+              EndConnector="0,140"
               Start="0,0"
-              End="0,176.5">
+              End="0,132.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,176.5" />
+                    End="0,132.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17147,21 +18024,21 @@
         <NodeLayout
           Size="154,42"
           Id="Package\Load Dim to Warehouse\Employee\Dim_Employee"
-          TopLeft="422,274" />
+          TopLeft="426,251" />
         <EdgeLayout
           Id="Package\Load Dim to Warehouse\Employee.Paths[OLE DB Source Output]"
-          TopLeft="497.75,125">
+          TopLeft="499.75,125">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,149"
+              EndConnector="0,126"
               Start="0,0"
-              End="0,141.5">
+              End="0,118.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,141.5" />
+                    End="0,118.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17173,6 +18050,19 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim to Warehouse\Employee\Dim_Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Dim to Warehouse\Employee\Mid_Employee_Fix">
     <Properties>
@@ -17190,73 +18080,99 @@
     design-time-name="Package\Load Dim to Warehouse\Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Load Dim to Warehouse\Product\Mid_Product_Fix"
-          TopLeft="321,188" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="143,42"
           Id="Package\Load Dim to Warehouse\Product\Dim_Product"
-          TopLeft="330,348" />
+          TopLeft="484,438" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Load Dim to Warehouse\Product\Mid_Product_Fix"
+          TopLeft="482,222" />
         <EdgeLayout
           Id="Package\Load Dim to Warehouse\Product.Paths[OLE DB Source Output]"
-          TopLeft="401.75,230">
+          TopLeft="559.25,264">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,118"
+              EndConnector="0,174"
               Start="0,0"
-              End="0,110.5">
+              End="0,166.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,110.5" />
+                    End="0,166.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Dim to Warehouse\Product\Dim_Product">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Dim to Warehouse\Product\Mid_Product_Fix">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing"
+          TopLeft="341,199" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination"
+          TopLeft="350,337" />
+        <EdgeLayout
+          Id="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse.Paths[OLE DB Source Output]"
+          TopLeft="421,241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.5,96"
+              Start="0,0"
+              End="17.5,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44"
+                    Point2="0,48"
+                    Point3="4,48" />
+                  <mssgle:LineSegment
+                    End="13.5,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,48"
+                    Point2="17.5,48"
+                    Point3="17.5,52" />
+                  <mssgle:LineSegment
+                    End="17.5,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\Transformación Data\Customer R and W">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Transformación Data\Customer R and W\Mid_Customer"
+          TopLeft="453,565" />
         <NodeLayout
           Size="165,42"
           Id="Package\Transformación Data\Customer R and W\Mid_Customer_R"
@@ -17270,14 +18186,6 @@
           Id="Package\Transformación Data\Customer R and W\Type &quot;Mayorista&quot;"
           TopLeft="613,232" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Transformación Data\Customer R and W\Mid_Customer"
-          TopLeft="447,559" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Transformación Data\Customer R and W\Union All"
-          TopLeft="461,332" />
-        <NodeLayout
           Size="159,42"
           Id="Package\Transformación Data\Customer R and W\Type &quot;Minorista&quot;"
           TopLeft="275,233" />
@@ -17285,26 +18193,44 @@
           Size="172,42"
           Id="Package\Transformación Data\Customer R and W\First and last name"
           TopLeft="436,446" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Transformación Data\Customer R and W\Union All"
+          TopLeft="450,323" />
         <EdgeLayout
           Id="Package\Transformación Data\Customer R and W.Paths[Union All Output 1]"
-          TopLeft="522.25,374">
+          TopLeft="511.5,365">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,72"
+              EndConnector="10.5,81"
               Start="0,0"
-              End="0,64.5">
+              End="10.5,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.5" />
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="4,40.5" />
+                  <mssgle:LineSegment
+                    End="6.5,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,40.5"
+                    Point2="10.5,40.5"
+                    Point3="10.5,44.5" />
+                  <mssgle:LineSegment
+                    End="10.5,73.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17326,7 +18252,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17348,102 +18276,123 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transformación Data\Customer R and W.Paths[Derived Column Output2]"
-          TopLeft="694,274">
+          TopLeft="525.25,488">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-152.333333333333,58"
+              EndConnector="0,77"
               Start="0,0"
-              End="-152.333333333333,50.5">
+              End="0,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.3531300160514" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.3531300160514"
-                    Point2="0,34.3531300160514"
-                    Point3="-4,34.3531300160514" />
-                  <mssgle:LineSegment
-                    End="-148.333333333333,34.3531300160514" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-148.333333333333,34.3531300160514"
-                    Point2="-152.333333333333,34.3531300160514"
-                    Point3="-152.333333333333,38.3531300160514" />
-                  <mssgle:LineSegment
-                    End="-152.333333333333,50.5" />
+                    End="0,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transformación Data\Customer R and W.Paths[Derived Column Output1]"
-          TopLeft="354.5,275">
+          TopLeft="694,274">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="148.833333333333,57"
+              EndConnector="-163.333333333333,49"
               Start="0,0"
-              End="148.833333333333,49.5">
+              End="-163.333333333333,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.760834670947" />
+                    End="0,25.0224719101123" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.760834670947"
-                    Point2="0,33.760834670947"
-                    Point3="4,33.760834670947" />
+                    Point1="0,25.0224719101123"
+                    Point2="0,29.0224719101123"
+                    Point3="-4,29.0224719101123" />
                   <mssgle:LineSegment
-                    End="144.833333333333,33.760834670947" />
+                    End="-159.333333333333,29.0224719101123" />
                   <mssgle:CubicBezierSegment
-                    Point1="144.833333333333,33.760834670947"
-                    Point2="148.833333333333,33.760834670947"
-                    Point3="148.833333333333,37.760834670947" />
+                    Point1="-159.333333333333,29.0224719101123"
+                    Point2="-163.333333333333,29.0224719101123"
+                    Point3="-163.333333333333,33.0224719101123" />
                   <mssgle:LineSegment
-                    End="148.833333333333,49.5" />
+                    End="-163.333333333333,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transformación Data\Customer R and W.Paths[Derived Column Output]"
-          TopLeft="522.25,488">
+          TopLeft="354.5,275">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="137.833333333333,48"
               Start="0,0"
-              End="0,63.5">
+              End="137.833333333333,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,24.430176565008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.430176565008"
+                    Point2="0,28.430176565008"
+                    Point3="4,28.430176565008" />
+                  <mssgle:LineSegment
+                    End="133.833333333333,28.430176565008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133.833333333333,28.430176565008"
+                    Point2="137.833333333333,28.430176565008"
+                    Point3="137.833333333333,32.430176565008" />
+                  <mssgle:LineSegment
+                    End="137.833333333333,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformación Data\Customer R and W\Mid_Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Transformación Data\Customer R and W\Mid_Customer_R">
     <Properties>
@@ -17470,24 +18419,11 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transformación Data\Customer R and W\Mid_Customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Transformación Data\Date">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="147,42"
           Id="Package\Transformación Data\Date\Mid_Date_Fix"
@@ -17499,31 +18435,33 @@
         <NodeLayout
           Size="99,42"
           Id="Package\Transformación Data\Date\Sort"
-          TopLeft="449,386" />
+          TopLeft="462,389" />
         <NodeLayout
           Size="465,42"
           Id="Package\Transformación Data\Date\Columns DATE_ID, SEMESTER, BIMESTER, DATE, YEAR, MONTH and DAY"
           TopLeft="283,264" />
         <EdgeLayout
           Id="Package\Transformación Data\Date.Paths[Sort Output]"
-          TopLeft="501.5,428">
+          TopLeft="508,431">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,78"
+              EndConnector="0,75"
               Start="0,0"
-              End="0,70.5">
+              End="0,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.5" />
+                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17545,41 +18483,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transformación Data\Date.Paths[Derived Column Output]"
-          TopLeft="515.5,306">
+          TopLeft="513.5,306">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17,80"
+              EndConnector="0,83"
               Start="0,0"
-              End="-17,72.5">
+              End="0,75.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36"
-                    Point2="0,40"
-                    Point3="-4,40" />
-                  <mssgle:LineSegment
-                    End="-13,40" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13,40"
-                    Point2="-17,40"
-                    Point3="-17,44" />
-                  <mssgle:LineSegment
-                    End="-17,72.5" />
+                    End="0,75.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17615,11 +18545,7 @@
     design-time-name="Package\Transformación Data\Employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Transformación Data\Employee\Mid_Employee_Fix"
-          TopLeft="454,389" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152,42"
           Id="Package\Transformación Data\Employee\Mid_Employee"
@@ -17628,28 +18554,10 @@
           Size="304,42"
           Id="Package\Transformación Data\Employee\First and last name; Age; Fix gender; Antiquity"
           TopLeft="387.692307692308,245.923076923077" />
-        <EdgeLayout
-          Id="Package\Transformación Data\Employee.Paths[Derived Column Output]"
-          TopLeft="540.096153846154,287.923076923077">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,101.076923076923"
-              Start="0,0"
-              End="0,93.576923076923">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,93.576923076923" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Transformación Data\Employee\Mid_Employee_Fix"
+          TopLeft="454,389" />
         <EdgeLayout
           Id="Package\Transformación Data\Employee.Paths[OLE DB Source Output]"
           TopLeft="536.846153846154,151">
@@ -17669,14 +18577,40 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformación Data\Employee.Paths[Derived Column Output]"
+          TopLeft="540.096153846154,287.923076923077">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101.076923076923"
+              Start="0,0"
+              End="0,93.576923076923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.576923076923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Transformación Data\Employee\Mid_Employee_Fix">
+    design-time-name="Package\Transformación Data\Employee\Mid_Employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17689,7 +18623,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Transformación Data\Employee\Mid_Employee">
+    design-time-name="Package\Transformación Data\Employee\Mid_Employee_Fix">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17709,7 +18643,7 @@
         <NodeLayout
           Size="162,42"
           Id="Package\Transformación Data\Product\Mid_Product_Fix"
-          TopLeft="295,433" />
+          TopLeft="283,425" />
         <NodeLayout
           Size="141,42"
           Id="Package\Transformación Data\Product\Mid_Product"
@@ -17748,18 +18682,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transformación Data\Product.Paths[Derived Column Output1]"
-          TopLeft="373,329">
+          TopLeft="367,329">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,104"
+              EndConnector="0,96"
               Start="0,0"
-              End="0,96.5">
+              End="0,88.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,96.5" />
+                    End="0,88.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17824,7 +18758,46 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Dim to Warehouse\Employee\Dim_Employee">
+    design-time-name="Package\Load Dim to Warehouse\Product\Dim_Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim to Warehouse\Product\Mid_Product_Fix">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\Mid_Fact_Billing">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact to Middle and Warehouse\Fact_Billing in datawarehouse\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
