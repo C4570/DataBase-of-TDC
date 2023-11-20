@@ -1,7 +1,6 @@
 use middle;
 
 CREATE TABLE [Mid_Customer] (
-	[CUSTOMER_KEY] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	[CUSTOMER_ID] int,
     [FIRST_NAME] VARCHAR(255),
     [LAST_NAME] VARCHAR(255),
@@ -9,8 +8,25 @@ CREATE TABLE [Mid_Customer] (
     [STATE] NVARCHAR(255),
     [ZIPCODE] BIGINT,
     [TYPE] VARCHAR(50),
-    [BIRTH_DATE] DATE,
-	[AGE] INT
+    [BIRTH_DATE] DATE
+)
+
+CREATE TABLE [Mid_Customer_R] (
+    [CUSTOMER_ID] int,
+    [FULL_NAME] nvarchar(255),
+    [BIRTH_DATE] datetime,
+    [CITY] nvarchar(255),
+    [STATE] nvarchar(255),
+    [ZIPCODE] bigint
+)
+
+CREATE TABLE [Mid_Customer_W] (
+    [CUSTOMER_ID] int,
+    [FULL_NAME] nvarchar(255),
+    [BIRTH_DATE] datetime,
+    [CITY] nvarchar(255),
+    [STATE] nvarchar(255),
+    [ZIPCODE] bigint
 )
 
 CREATE TABLE [Mid_Employee] (
@@ -24,16 +40,16 @@ CREATE TABLE [Mid_Employee] (
 )
 
 CREATE TABLE [Mid_Employee_Fix] (
-	[EMPLOYEE_KEY] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	[EMPLOYEE_ID] INT,
     [FIRST_NAME] VARCHAR(255),
     [LAST_NAME] VARCHAR(255),
     [CATEGORY] NVARCHAR(255),
     [EMPLOYMENT_DATE] DATE,
     [BIRTH_DATE] DATE,
-	[AGE] INT,
     [EDUCATION_LEVEL] NVARCHAR(255),
-    [GENDER] VARCHAR(50)
+    [GENDER] VARCHAR(50),
+	[ANTIQUITY] INT,
+    [AGE] INT
 )
 
 CREATE TABLE [Mid_Product] (
@@ -43,7 +59,7 @@ CREATE TABLE [Mid_Product] (
 )
 
 CREATE TABLE [Mid_Product_Fix] (
-    [PRODUCT_KEY] INT,
+    [PRODUCT_ID] INT,
     [DETAIL] VARCHAR(50),
     [CONTAINER_CAPACITY] DECIMAL(3,2),
     [UNIT] NVARCHAR(88)
